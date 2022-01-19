@@ -1,0 +1,33 @@
+{
+	"title": "Next.js TypeScript",
+	"titleTemplate": "%s | Gem",
+	"description": "THis is Gem Next.js TypeScript Site Starter",
+	"canonical": "https://www.canonical.ie/",
+	"favicon": "/favicon.ico",
+	"additionalMetaTags": [
+		{ "property": "author", "content": "GEM Cloud" },
+		{
+			"property": "keywords",
+			"content": ""
+		}
+	],
+	"twitter": {
+		"cardType": "summary",
+		"handle": "xxxx",
+		"site": "xxxx"
+	},
+	"openGraph": {
+		"type": "website",
+		"site_name": "Gem's Site",
+		"profile": {
+			"firstName": "Gem"
+		},
+		"images": [
+			{
+				"url": "/images/og.jpg",
+				"width": 1280,
+				"height": 720
+			}
+		]
+	}
+}
