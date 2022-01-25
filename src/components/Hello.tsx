@@ -15,7 +15,7 @@ export const Hello = () => {
 // export default function MyComponent() {}
 
 // export default Hello
-
+// <Link href={{pathname: '/', hash: 'personal'}}>
 // export default function Hamburger({ onClick }: { onClick: any }) {
 // 	const hamburger = []
 // 	for (let i = 0; i < 3; i += 1) {
@@ -34,4 +34,25 @@ export const Hello = () => {
 // 			{hamburger}
 // 		</div>
 // 	)
+// }
+
+// export async function getStaticPaths() {
+// 	const idList = await fetchAllIds()
+// 	const paths = []
+// 	idList.forEach(id => {
+// 		paths.push(`/gunluk/${id}`)
+// 	})
+// 	return { paths, fallback: true }
+// }
+
+// export async function getStaticProps({ params }) {
+// 	const { slug } = params
+
+// 	try {
+// 		const data = await fetchGunluk(slug)
+// 		return data ? { props: { data } } : { notFound: true }
+// 	} catch (error) {
+// 		console.error(error)
+// 		return { notFound: true }
+// 	}
 // }

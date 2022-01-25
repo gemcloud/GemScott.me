@@ -57,3 +57,7 @@ import Image from 'next/image'
 
 <img src={require('../../images/stress.jpg')} />
 [object Module]
+
+## getStaticProps 7031 Binding element 'slug' implicitly has an 'any'
+
+type.ts(7031) Binding element 'slug' implicitly has an 'any' type.ts(7031)

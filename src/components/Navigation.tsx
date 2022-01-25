@@ -26,7 +26,7 @@ export default function Navigation({ links }: Props) {
 		<>
 			{/* <Hamburger toggleMenu={toggleMenu} /> */}
 			<nav
-				className={`${menuStyles} sm:flex fixed sm:relative sm:mr-8 py-20 sm:py-0 font-open-sans h-full flex flex-col sm:flex-row justify-between text-gray-333 text-lg sm:text-sm bg-white inset-0 sm:inset-auto`}
+				className={`${menuStyles} bg-fuchsia-100 sm:flex fixed sm:relative sm:mr-8 py-20 sm:py-0 font-open-sans h-full flex flex-col sm:flex-row justify-between text-gray-333 text-lg sm:text-sm bg-white inset-0 sm:inset-auto`}
 			>
 				<div className='flex flex-col sm:flex-row'>
 					{navLinks.map(({ title, href }) => {
@@ -35,6 +35,7 @@ export default function Navigation({ links }: Props) {
 							// <Link href={`/${yourPath}`} ></Link>
 							// <Link href={{ pathname: `/{href}` }} as={`/${href}`} key={href}>
 							// <Link href={`/${href}`} key={href} prefetch={false} passHref>
+							// old version: <Link href={{pathname: '/', hash: 'personal'}}>
 							<Link href={`/${href}`} key={href} prefetch={false} passHref>
 								<a
 									className={`${active} px-4 py-4 sm:py-0 sm:h-full flex justify-center items-center sm:border-b-4 border-white hover:border-theme-green transition-colors ease-linear duration-100 text-center`}

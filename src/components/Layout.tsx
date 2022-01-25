@@ -15,7 +15,7 @@ type Props = {
 
 export default function Layout({ children, pageTitle, links }: Props) {
 	return (
-		<div className='flex flex-col md:h-screen'>
+		<div className='flex flex-col min-h-screen'>
 			{/* <SocialBar /> */}
 			<Header links={links} />
 			<Breadcrumb>{pageTitle}</Breadcrumb>
@@ -27,6 +27,11 @@ export default function Layout({ children, pageTitle, links }: Props) {
 			<div className='flex flex-col flex-1 justify-end'>
 				{/* <Contact />
 				<Footer links={links} /> */}
+				<footer className='bg-fuchsia-100 mt-8 py-4'>
+					<div className='container mx-auto flex justify-center'>
+						&copy; 2022 Gem Cloud
+					</div>
+				</footer>
 			</div>
 		</div>
 	)

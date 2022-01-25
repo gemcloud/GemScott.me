@@ -1,5 +1,27 @@
 ## MarkDown as your CMS
 
+### solution one : https://blog.logrocket.com/how-to-safely-render-markdown-using-react-markdown/
+
+1. To use "react-markdown".
+2. source codes : MarkdownToHtml.tsx + PrintMarkdown.tsx
+3. install
+   ```
+    1. > npm i gray-matter
+    2. > npm install react-markdown
+    3. > npm i remark-gfm
+   ```
+
+### try "markdown-it
+
+https://blog.openreplay.com/creating-a-markdown-blog-powered-by-next-js-in-under-an-hour
+
+```
+>npm install markdown-it
+>npm install --save @types/markdown-it
+```
+
+===========Below not work!!!=====================================
+
 ### install related npm libs
 
 remark-parse
@@ -46,14 +68,3 @@ https://github.com/cleggacus/next-blog-medium-tutorial
 ```
     >npm i remark-gfm
 ```
-
-### solution : https://blog.logrocket.com/how-to-safely-render-markdown-using-react-markdown/
-
-1. To use "react-markdown".
-2. source codes : MarkdownToHtml.tsx + PrintMarkdown.tsx
-3. install
-   ```
-    1. > npm i gray-matter
-    2. > npm install react-markdown
-    3. > npm i remark-gfm
-   ```
