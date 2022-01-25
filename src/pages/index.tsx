@@ -47,9 +47,8 @@ function IndexPage({ page, links }: Props) {
 export const getStaticProps: GetStaticProps = async () => {
 	// get links data
 	const links_ = getNavigationLinks()
-	// console.log(links_)
-	// get pages data
 
+	// get pages data
 	// get md data for example.
 	// const content = await import(`../content/pages/${'home'}.md`)
 	// return { props: { content: content.default } }
@@ -64,7 +63,8 @@ export const getStaticProps: GetStaticProps = async () => {
 		props: {
 			page: {
 				...page,
-				markdown: page,
+				// markdown: page.content
+				markdown: (page as any).content,
 			},
 			links: { ...links_ },
 		},

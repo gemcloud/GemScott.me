@@ -10,7 +10,8 @@ import { join } from 'path'
 import matter from 'gray-matter'
 
 const pagesDirectory = join(process.cwd(), '_pages')
-const dynamicPagesDirectory = join(pagesDirectory, 'dynamic')
+// const dynamicPagesDirectory = join(pagesDirectory, 'dynamic')
+const dynamicPagesDirectory = join(pagesDirectory, 'portfolio')
 
 /**
  * Gets all the files (slugs) in a directory

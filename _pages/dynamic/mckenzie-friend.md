@@ -1,6 +1,6 @@
 ---
 title: McKenzie Friend
-image: mike-wallis-head-new.jpeg
+image: tigers/tiger-businessman.jpg
 navigation: true
 ---
 

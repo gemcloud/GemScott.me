@@ -4,8 +4,9 @@ import { LinksAttributes } from '@/types/IPageMdStructure'
 // import { join } from 'path'
 // import PropTypes from 'prop-types';
 import Layout from '@/components/Layout'
-// import PrintMarkdown from './markdown/printMarkdown';
-// import WithImage from './markdown/withImage';
+import PrintMarkdown from '@/components/Markdown/PrintMarkdown'
+// import GemMarkdown from '@/components/markdown/GemMarkdown'
+import WithImage from '@/components/Markdown/WithImage'
 
 type Props = {
 	children?: ReactNode
@@ -28,6 +29,14 @@ export default function DynamicLayout({
 		<>
 			<Layout pageTitle={title} links={links}>
 				<NextSeo />
+				{/* render page content below */}
+				{image ? (
+					<WithImage markdown={markdown} image={image} />
+				) : (
+					// <PrintMarkdown markdown={markdown} />
+					<PrintMarkdown markdownString={markdown} />
+					// <GemMarkdown content={markdown} />
+				)}
 			</Layout>
 		</>
 		// <Layout pageTitle={title} links={links}>

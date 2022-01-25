@@ -13,5 +13,5 @@ hero_description: >-
 
 
   With Nextjs
-hero_image: img/beauty_snow.jpg
+hero_image: images/beauty_snow.jpg
 ---

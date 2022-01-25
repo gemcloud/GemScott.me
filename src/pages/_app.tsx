@@ -1,5 +1,4 @@
-import '@/styles/TestingHeader.css'
-import '@/styles/globals.scss'
+import '@/styles/globals.css'
 import React from 'react'
 import type { AppProps } from 'next/app'
 

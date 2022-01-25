@@ -1,6 +1,6 @@
 ---
-title: About Mike
-image: mike-wallis2.jpg
+title: About Me
+image: tigers/tiger-graduates-blue.webp
 navigation: true
 footer: false
 ---
