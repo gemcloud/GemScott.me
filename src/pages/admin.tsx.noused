@@ -1,0 +1,36 @@
+import React from 'react'
+import dynamic from 'next/dynamic'
+
+// const CMS_CONFIG = {}
+const Loading = () => (
+	<div className='flex min-h-screen items-center justify-center'>
+		<p className='text-xl font-semibold text-gray-500'>
+			Loading NetlifyCMS Admin...
+		</p>
+	</div>
+)
+
+const NetlifyCMS = dynamic(
+	(): any =>
+		import('netlify-cms-app').then(cms => {
+			// CMS.NetlifyCmsApp.init()
+			// CMS.init({ CMS_CONFIG })
+			cms.init()
+		}),
+	{
+		ssr: false,
+		loading: Loading,
+	}
+)
+
+// const CMS = dynamic(
+// 	() =>
+// 		import('netlify-cms-app').then(CMS => {
+// 			CMS.init()
+// 		}),
+// 	{ ssr: false, loading: Loading }
+// )
+
+const Admin = () => <NetlifyCMS />
+
+export default Admin

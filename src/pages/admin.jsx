@@ -1,17 +1,24 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-import { config } from '@/../cms/netlify.config' // you have to use "import config"!
+// "netlify-cms-app " auto to find out "public/admin/config.yml"
+// import { config } from '@/../cms/netlify.config' // you have to use "import config"!
 
-// solution for jsx!!!
+const Loading = () => (
+	<div className='flex min-h-screen items-center justify-center'>
+		<p className='text-xl font-semibold text-gray-500'>
+			Loading NetlifyCMS Admin...
+		</p>
+	</div>
+)
 const NetlifyCMS = dynamic(
 	async () =>
 		import('netlify-cms-app').then(cms => {
 			// cms.init({ config })
-			cms.init(config)
+			cms.init()
 		}),
 	{
 		ssr: false,
-		loading: () => <p>Loading NetlifyCMS Admin...</p>,
+		loading: Loading,
 	}
 )
 
