@@ -7,8 +7,8 @@ import React from 'react'
 import { GetStaticProps } from 'next'
 
 import DynamicLayout from '@/components/DynamicLayout'
-import { getPageContentBySlug } from '@/libs/markdown'
-import { getNavigationLinks } from '@/libs/navigation'
+import { getPageContentBySlug } from '@/libs/gemMarkdown'
+import { getNavigationLinks } from '@/libs/gemNavigation'
 import { LinksAttributes, PageAttributes } from '@/types/IPageMdStructure'
 
 type Props = {
@@ -18,22 +18,9 @@ type Props = {
 
 // export default function IndexPage({ page }: Props, links: Props) {
 function IndexPage({ page, links }: Props) {
-	// const { title, image, slug, markdown } = page
-	// const { pageAttributes } = page
-	// console.log(
-	// 	'page==>' +
-	// 		page.title +
-	// 		' | ' +
-	// 		page.slug +
-	// 		' | ' +
-	// 		page.image +
-	// 		' | ' +
-	// 		page.markdown
-	// )
-	// console.log('links==>' + { links })
-
 	return (
 		<DynamicLayout
+			gemindex={page.gemindex}
 			title={page.title}
 			image={page.image}
 			slug={page.slug}
@@ -48,16 +35,22 @@ export const getStaticProps: GetStaticProps = async () => {
 	// get links data
 	const links_ = getNavigationLinks()
 
+	// console.log(links_)
 	// get pages data
 	// get md data for example.
 	// const content = await import(`../content/pages/${'home'}.md`)
 	// return { props: { content: content.default } }
 	const page = getPageContentBySlug('home', [
+		'gemindex',
 		'title',
 		'image',
 		'slug',
 		'content',
 	])
+
+	// const page = JSON.stringify(pages)
+
+	// console.log(page)
 
 	return {
 		props: {

@@ -1,7 +1,6 @@
-## Netlify CMS a client-side react application.
+#### Splitting huge NetlifyCMS config.yml file to multiple JS files
 
-    - it uses Git to store your web site content in your own repository!
-    - We don't need to host our CMS separately!
+https://www.iliascreates.com/blog/post/splitting-netlifycms-config-to-multiple-js-files/
 
 ### Using Markdown Files for our WebSite Content
 

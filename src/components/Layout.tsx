@@ -5,7 +5,7 @@ import Container from '@/components/Container'
 import { LinksAttributes } from '@/types/IPageMdStructure'
 // import SocialBar from './socialBar'
 // import Contact from './contact'
-// import Footer from './footer'
+import { FooterGem } from '@/components/Footers/FooterGem'
 
 type Props = {
 	children?: ReactNode
@@ -15,23 +15,19 @@ type Props = {
 
 export default function Layout({ children, pageTitle, links }: Props) {
 	return (
-		<div className='flex flex-col min-h-screen'>
+		<div className='flex min-h-screen flex-col'>
 			{/* <SocialBar /> */}
 			<Header links={links} />
 			<Breadcrumb>{pageTitle}</Breadcrumb>
 			<Container>
-				<main className='sm:mx-2 md:mx-8 my-4 sm:my-12 font-open-sans text-gray-76 sm:text-sm leading-relaxed w-screen'>
+				<main className='font-open-sans text-gray-76 my-4 w-screen leading-relaxed sm:mx-2 sm:my-12 sm:text-sm md:mx-8'>
 					{children}
 				</main>
 			</Container>
-			<div className='flex flex-col flex-1 justify-end'>
+			<div className='flex flex-1 flex-col justify-end'>
 				{/* <Contact />
 				<Footer links={links} /> */}
-				<footer className='bg-fuchsia-100 mt-8 py-4'>
-					<div className='container mx-auto flex justify-center'>
-						&copy; 2022 Gem Cloud
-					</div>
-				</footer>
+				<FooterGem />
 			</div>
 		</div>
 	)

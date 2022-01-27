@@ -26,7 +26,7 @@ export default function Navigation({ links }: Props) {
 		<>
 			{/* <Hamburger toggleMenu={toggleMenu} /> */}
 			<nav
-				className={`${menuStyles} bg-fuchsia-100 sm:flex fixed sm:relative sm:mr-8 py-20 sm:py-0 font-open-sans h-full flex flex-col sm:flex-row justify-between text-gray-333 text-lg sm:text-sm bg-white inset-0 sm:inset-auto`}
+				className={`${menuStyles} font-open-sans text-gray-333 fixed inset-0 flex h-full flex-col justify-between bg-fuchsia-100 py-20 text-lg sm:relative sm:inset-auto sm:mr-8 sm:flex sm:flex-row sm:py-0 sm:text-sm`}
 			>
 				<div className='flex flex-col sm:flex-row'>
 					{navLinks.map(({ title, href }) => {
@@ -38,7 +38,7 @@ export default function Navigation({ links }: Props) {
 							// old version: <Link href={{pathname: '/', hash: 'personal'}}>
 							<Link href={`/${href}`} key={href} prefetch={false} passHref>
 								<a
-									className={`${active} px-4 py-4 sm:py-0 sm:h-full flex justify-center items-center sm:border-b-4 border-white hover:border-theme-green transition-colors ease-linear duration-100 text-center`}
+									className={`${active} hover:border-theme-green flex items-center justify-center border-white px-4 py-4 text-center transition-colors duration-100 ease-linear sm:h-full sm:border-b-4 sm:py-0`}
 								>
 									{title}
 								</a>
@@ -46,7 +46,7 @@ export default function Navigation({ links }: Props) {
 						)
 					})}
 				</div>
-				<div className='flex sm:hidden flex-col text-center text-sm items-center'>
+				<div className='flex flex-col items-center text-center text-sm sm:hidden'>
 					{/* <Phone />
 					<Email />
 					<SocialIcons /> */}

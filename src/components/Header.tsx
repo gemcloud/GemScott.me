@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import { useTheme } from 'next-themes'
 import Container from '@/components/Container'
 import Navigation from '@/components/Navigation'
 import { LinksAttributes } from '@/types/IPageMdStructure'
@@ -12,14 +13,17 @@ type Props = { links: LinksAttributes[] }
 // )
 
 export default function Header({ links }: Props) {
+	const { theme, setTheme } = useTheme()
 	const imgSrc = require('../../public/images/tigers/tiger-cute-me.jpg')
+	// const imgSrc = require('../../public/images/tigers/tiger-cute-me.jpg')
+	// const imgSrc = require('../../public/images/tigers/tiger-cute_001.png')
 	return (
 		<div className='w-screen'>
 			<Container>
 				{/* <header className='bg-fuchsia-100 mb-8 py-4'> */}
-				<div className='bg-fuchsia-100 flex items-center font-open-sans justify-between h-24 w-full'>
-					<div className='flex h-full justify-between items-center'>
-						<div className='hidden sm:flex pt-2 h-full w-32'>
+				<div className='font-open-sans flex h-24 w-full items-center justify-between bg-sky-200'>
+					<div className='flex h-full items-center justify-between'>
+						<div className='relative h-20 w-20 overflow-hidden rounded-full'>
 							<Link passHref href={{ pathname: '/' }}>
 								{/* <a className='logo flex flex-row text-lg lg:text-2xl'>
 									<LogoLetter letter='s' />
@@ -37,12 +41,16 @@ export default function Header({ links }: Props) {
 								<Image
 									src={imgSrc}
 									alt='Tiger headshot'
-									className='h-full sm:ml-8 sm:pr-8'
+									width={90}
+									height={90}
+									// layout='fill'
+									// objectFit='contain'
+									// className='h-full sm:ml-8 sm:pr-8'
 								></Image>
 							</Link>
 						</div>
 						<div className='w-10/12'>
-							<h1 className='text-2xl sm:text-3xl font-light font-lato'>
+							<h1 className='font-lato text-2xl font-light sm:text-3xl'>
 								Your Name or Company Name
 							</h1>
 							<p className='text-gray-333 text-sm'>
@@ -52,6 +60,14 @@ export default function Header({ links }: Props) {
 						</div>
 					</div>
 					<Navigation links={links} />
+					<Image
+						src='/icons/sun.svg'
+						width={30}
+						height={30}
+						alt='Toggle theme'
+						className='toggleTheme cursor-pointer'
+						onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+					/>
 				</div>
 			</Container>
 		</div>

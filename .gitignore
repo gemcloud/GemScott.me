@@ -13,7 +13,6 @@ yarn-error.log*
 /node_modules
 /.pnp
 .pnp.js
-package-lock.json
 
 # Runtime data
 pids
@@ -49,3 +48,7 @@ pids
 
 # Yarn Integrity file
 .yarn-integrity
+
+# dont mind cuz u dont use
+package-lock.json
+yarn.lock

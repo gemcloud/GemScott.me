@@ -66,3 +66,40 @@ plugins: [require('@tailwindcss/typography')],
 
 > npm i postcss-preset-env
 > npm i @types/postcss-preset-env
+
+## A Prettier plugin for Tailwind CSS v3.0+ that automatically sorts classes based on our recommended class order.
+
+https://github.com/tailwindlabs/prettier-plugin-tailwindcss
+
+```
+npm install -D prettier prettier-plugin-tailwindcss
+```
+
+## themes
+
+install > npm i next-themes
+
+```
+> npm i next-themes
+```
+
+add codes on "\_app.tsx"
+
+```
+	<ThemeProvider attribute='class'>
+		<Component {...pageProps} />
+	</ThemeProvider>
+```
+
+add 'light' ? 'dark' : 'light' on "Header.tsx"
+
+```
+	<Image
+		src='/icons/sun.svg'
+		width={30}
+		height={30}
+		alt='Toggle theme'
+		className='cursor-pointer toggleTheme'
+		onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+	/>
+```

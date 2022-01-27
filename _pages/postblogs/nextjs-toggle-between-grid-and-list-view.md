@@ -48,7 +48,7 @@ Let's go ahead and add a button that, on click, can change our variable.
 ```jsx
 <div className='flex justify-end p-5'>
 	<button
-		className='px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700'
+		className='rounded-full bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700'
 		onClick={() => setToggleViewMode(!toggleViewMode)}
 	>
 		{toggleViewMode ? 'grid' : 'list'}

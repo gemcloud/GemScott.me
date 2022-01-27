@@ -7,8 +7,12 @@
    and running ">yarn build"
 
 ```
->npm run format
+>yarn
 >yarn build
+>yarn dev
+
+
+>npm run format
 ```
 
 ### Project Structure:

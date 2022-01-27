@@ -1,5 +1,5 @@
 .markdown {
-	@apply text-base leading-relaxed text-left;
+	@apply text-left text-base leading-relaxed;
 }
 
 .markdown h3,
@@ -10,7 +10,7 @@
 }
 
 .markdown h3 {
-	@apply text-2xl mb-6;
+	@apply mb-6 text-2xl;
 }
 
 .markdown p {

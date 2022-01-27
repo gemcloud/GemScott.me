@@ -9,8 +9,8 @@ type Props = { children: ReactNode }
 
 export default function Container({ children }: Props) {
 	return (
-		<div className='w-screen flex justify-center'>
-			<div className='flex px-4 w-full xl:w-xl'>{children}</div>
+		<div className='flex w-screen justify-center'>
+			<div className='xl:w-xl flex w-full px-4'>{children}</div>
 		</div>
 	)
 }

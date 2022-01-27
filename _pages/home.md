@@ -1,4 +1,5 @@
 ---
+gemindex: A00
 title: Home
 image: stress.jpg
 navigation: true

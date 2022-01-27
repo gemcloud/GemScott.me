@@ -94,16 +94,16 @@ export default function MessageForm() {
 			</h3>
 			{!showCaptcha ? (
 				<form onSubmit={submitFormAndShowCaptcha}>
-					<div className='flex font-open-sans justify-start flex-col sm:flex-row'>
-						<div className='sm:mr-4 w-100 sm:w-1/2 md:w-2/5 flex flex-col items-end'>
+					<div className='font-open-sans flex flex-col justify-start sm:flex-row'>
+						<div className='w-100 flex flex-col items-end sm:mr-4 sm:w-1/2 md:w-2/5'>
 							<label
-								className='block text-gray-500 font-bold my-2 w-full'
+								className='my-2 block w-full font-bold text-gray-500'
 								htmlFor='contact-form-name'
 							>
 								Name:
 								<input
 									id='contact-form-name'
-									className='appearance-none border-2 border-gray-200 rounded w-full p-2 text-gray-700 leading-tight focus:outline-none focus:border-theme-green'
+									className='focus:border-theme-green w-full appearance-none rounded border-2 border-gray-200 p-2 leading-tight text-gray-700 focus:outline-none'
 									type='text'
 									value={name}
 									onChange={e =>
@@ -113,13 +113,13 @@ export default function MessageForm() {
 								/>
 							</label>
 							<label
-								className='block text-gray-500 font-bold my-2 w-full'
+								className='my-2 block w-full font-bold text-gray-500'
 								htmlFor='contact-form-email'
 							>
 								Email:
 								<input
 									id='contact-form-email'
-									className='appearance-none border-2 border-gray-200 rounded w-full p-2 text-gray-700 leading-tight focus:outline-none focus:border-theme-green'
+									className='focus:border-theme-green w-full appearance-none rounded border-2 border-gray-200 p-2 leading-tight text-gray-700 focus:outline-none'
 									type='email'
 									value={email}
 									onChange={e =>
@@ -129,16 +129,16 @@ export default function MessageForm() {
 								/>
 							</label>
 						</div>
-						<div className='sm:mx-4 w-full sm:w-1/2 md:w-3/5'>
+						<div className='w-full sm:mx-4 sm:w-1/2 md:w-3/5'>
 							<label
-								className='block text-gray-500 font-bold my-2'
+								className='my-2 block font-bold text-gray-500'
 								htmlFor='contact-form-message'
 							>
 								Message:
 								<textarea
 									rows={5}
 									id='contact-form-message'
-									className='appearance-none border-2 border-gray-200 rounded w-full p-2 text-gray-700 leading-tight focus:outline-none focus:border-theme-green'
+									className='focus:border-theme-green w-full appearance-none rounded border-2 border-gray-200 p-2 leading-tight text-gray-700 focus:outline-none'
 									// type='text'
 									value={message}
 									onChange={e =>
@@ -149,14 +149,14 @@ export default function MessageForm() {
 							</label>
 						</div>
 					</div>
-					<div className='w-full flex justify-end items-center flex-col sm:flex-row'>
+					<div className='flex w-full flex-col items-center justify-end sm:flex-row'>
 						{showFormErr ? (
-							<p className='sm:mr-4 text-red-400'>
+							<p className='text-red-400 sm:mr-4'>
 								Please fill in all three input boxes to send a message
 							</p>
 						) : null}
 						<button
-							className='bg-theme-green text-white py-2 px-4 mt-6 sm:mr-4 rounded focus:outline-none focus:shadow-outline w-full md:w-1/4 lg:w-1/5'
+							className='bg-theme-green focus:shadow-outline mt-6 w-full rounded py-2 px-4 text-white focus:outline-none sm:mr-4 md:w-1/4 lg:w-1/5'
 							type='submit'
 						>
 							Send

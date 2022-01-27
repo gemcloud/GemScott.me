@@ -1,5 +1,10 @@
 ## 2022-01-21
 
+### Helper:
+
+- React Prop Types with TypeScript
+  [https://www.benmvp.com/blog/react-prop-types-with-typescript/](https://www.benmvp.com/blog/react-prop-types-with-typescript/)
+
 Fixed 1. TS2602 :
 ==> by reloading VSCode.
 Ctrl + p and type "> Developer: Reload Window"
@@ -61,3 +66,88 @@ import Image from 'next/image'
 ## getStaticProps 7031 Binding element 'slug' implicitly has an 'any'
 
 type.ts(7031) Binding element 'slug' implicitly has an 'any' type.ts(7031)
+
+### ts-2339: "Property 'title' does not exist on type '{}'.ts(2339)"???
+
+Property 'title' does not exist on type 'string | { slug: string; length: number; toString(): string; toLocaleString(): string; pop(): string | undefine
+
+[https://simplernerd.com/typescript-dynamic-json/](https://simplernerd.com/typescript-dynamic-json/)
+
+#### Solution 1. Quick and dirty : add "any"
+
+```
+		//({ title, slug, navigation, footer }) => ({
+		({ title, slug, navigation, footer }: any) => ({
+
+```
+
+#### Solution 2: The Proper Fix : Consistency is key.
+
+```
+interface ExampleObject {
+    [key: string]: any
+}
+let obj: ExampleObject = {};
+obj.key1 = 1;
+obj['key2'] = 'dog';
+
+```
+
+```
+let obj: {[k: string]: any} = {};
+obj.key1 = 1;
+obj['key2'] = 'dog';
+
+```
+
+#### Solution 3: The JavaScript Fix: Pure JavaScript.
+
+Object.assign().
+
+```
+let obj = {};
+Object.assign(obj, {key1: 1});
+Object.assign(obj, {key2: 'dog'});
+
+```
+
+## ts-2345: Argument of type 'string[]' is not assignable to parameter of type 'never[]'. Type 'string' is not assignable to type 'never'.ts(2345)
+
+-Solution : add "(fields: string[] = [])"
+
+```
+export function getAllDynamicPages(fields: string[] = []) {
+```
+
+##
+
+export function getSlugsFromDirectory(dir: fs.PathLike) {
+return fs.readdirSync(dir)
+}
+
+## Type error: Element implicitly has an 'any' type because expression of type '"slug"' can't be used to index type '{}'.
+
+Property 'slug' does not exist on type '{}'.
+Element implicitly has an 'any' type because expression of type '' can't be used to index type '{}'.
+
+- solution: add ": any"
+  [https://stackoverflow.com/questions/12710905/how-do-i-dynamically-assign-properties-to-an-object-in-typescript](https://stackoverflow.com/questions/12710905/how-do-i-dynamically-assign-properties-to-an-object-in-typescript)
+
+```
+	// const items = {}
+	const items : any = {}
+   // var obj: any = {}
+	// 	obj.prop = 5
+
+```
+
+### import('netlify-cms-app')
+
+Failed to compile.
+ts 2345 is not assignable to parameter of type 'DynamicOptions<{}> | Loader<{}>'
+
+2345 Argument of type '() => Promise<void | React.ComponentClass<never, any> | React.FunctionComponent<never> | { default: React.ComponentType<never>; }>' is not assignable to parameter of type 'DynamicOptions<{}> | Loader<{}>'.
+Type '() => Promise<void | React.ComponentClass<never, any> | React.FunctionComponent<never> | { default: React.ComponentType<never>; }>' is not assignable to type '() => LoaderComponent<{}>'.
+Type 'Promise<void | ComponentClass<never, any> | FunctionComponent<never> | { default: ComponentType<never>; }>' is not assignable to type 'LoaderComponent<{}>'.
+Type 'void | ComponentClass<never, any> | FunctionComponent<never> | { default: ComponentType<never>; }' is not assignable to type 'ComponentType<{}> | { default: ComponentType<{}>; }'.
+Type 'void' is not assignable to type 'ComponentType<{}> | { default: ComponentType<{}>; }'.ts(2345)

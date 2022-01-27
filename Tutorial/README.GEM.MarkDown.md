@@ -11,7 +11,7 @@
     3. > npm i remark-gfm
    ```
 
-### try "markdown-it
+### solution two : to use "markdown-it" to see "pages/post/[slug].tsx"
 
 https://blog.openreplay.com/creating-a-markdown-blog-powered-by-next-js-in-under-an-hour
 
@@ -19,6 +19,25 @@ https://blog.openreplay.com/creating-a-markdown-blog-powered-by-next-js-in-under
 >npm install markdown-it
 >npm install --save @types/markdown-it
 ```
+
+### Terms & knowlegment
+
+- AST : Abstract Syntax Tree
+
+### unified / Remark ecosystem: the process of a processor.
+
+| ........................ process ........................... |
+| .......... parse ... | ... run ... | ... stringify ..........|
+
+          +--------+                     +----------+
+
+Input ->- | Parser | ->- Syntax Tree ->- | Compiler | ->- Output
++--------+ | +----------+
+X
+|
++--------------+
+| Transformers |
++--------------+
 
 ===========Below not work!!!=====================================
 

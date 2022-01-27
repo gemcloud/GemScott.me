@@ -87,7 +87,7 @@ And now, all we need to do is render the button in our HTML.
 
 ```jsx
 <button
-	className='mt-4 p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300'
+	className='mt-4 rounded-lg border-blue-300 bg-blue-500 p-2 pl-5 pr-5 text-lg text-gray-100 focus:border-4'
 	onClick={() => handleGitHubLogin()}
 	disabled={loading}
 >

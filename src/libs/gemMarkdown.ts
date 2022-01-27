@@ -8,17 +8,19 @@
 import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
+// import { toUnicode } from 'punycode'
 
 const pagesDirectory = join(process.cwd(), '_pages')
 // const dynamicPagesDirectory = join(pagesDirectory, 'dynamic')
-const dynamicPagesDirectory = join(pagesDirectory, 'portfolio')
+// const dynamicPagesDirectory = join(pagesDirectory, 'resume')
+const dynamicPagesDirectory = join(pagesDirectory, 'freelancer')
 
 /**
  * Gets all the files (slugs) in a directory
  * @param {fs.PathLike} dir :  the directory full path.
  * @return {string[]} all files name
  */
-export function getSlugsFromDirectory(dir) {
+export function getSlugsFromDirectory(dir: fs.PathLike): string[] {
 	return fs.readdirSync(dir)
 }
 
@@ -33,39 +35,36 @@ export function getSlugsFromDirectory(dir) {
  * @return {string[]} : the contents of a file
  */
 // export function getBySlug(dir: string, slug: string, fields: string[] = []) {
-export function getBySlug(dir, slug, fields = []) {
+export function getBySlug(dir: string, slug: string, fields: string[] = []) {
 	const realSlug = slug.replace(/\.md$/, '')
+
+	// TODO: jump subfolders md file only.
 	const fullPath = join(dir, `${realSlug}.md`)
 	const fileContents = fs.readFileSync(fullPath, 'utf8')
 	// MD format
-	// data === title | image | navigation | Footer
+	// data === gemindex | title | image | navigation | Footer
 	// content === Md file content
 	const { data, content } = matter(fileContents)
-	// console.log(fields)
-
-	// Fixed "Element implicitly has an 'any' type because expression of type '"slug"' can't be used to index type '{}'."
-	const items = {}
-	// const items: string[] = []
+	const items: any = {}
 
 	// Ensure only the minimal needed data is exposed
-	fields.forEach(field => {
-		if (field === 'slug') {
-			items[field] = realSlug
+	// Object.keys(fields).forEach(key => {
+	fields.forEach(key => {
+		if (key === 'slug') {
+			items['slug'] = realSlug
 		}
-		if (field === 'content') {
-			items[field] = content
+		if (key === 'content') {
+			items[key] = content
 		}
 
-		if (data[field]) {
-			items[field] = data[field]
+		if (data[key]) {
+			items[key] = data[key]
 		}
 	})
-
 	return items
 }
 
-// export function getPageContentBySlug(slug: string, fields: string[] = []) {
-export function getPageContentBySlug(slug, fields = []) {
+export function getPageContentBySlug(slug: string, fields: string[] = []) {
 	return getBySlug(pagesDirectory, slug, fields)
 }
 
@@ -76,11 +75,8 @@ export function getPageContentBySlug(slug, fields = []) {
  * @return {string[]} : contents of one page.
  */
 export function getDynamicPageContentBySlug(
-	slug,
-	fields = []
-	// slug: string | string[],
-	// slug: string,
-	// fields: string[] = []
+	slug: string,
+	fields: string[] = []
 ) {
 	return getBySlug(dynamicPagesDirectory, slug, fields)
 }
@@ -90,8 +86,7 @@ export function getDynamicPageContentBySlug(
  * @param {string[]} fields : defined fields.
  * @return {string[]} : a list of all the pages in the _pages/dynamic directory
  */
-// export function getAllDynamicPages(fields: string[] = []) {
-export function getAllDynamicPages(fields = []) {
+export function getAllDynamicPages(fields: string[] = []) {
 	const slugs = getSlugsFromDirectory(dynamicPagesDirectory)
 	const pages = slugs.map(slug => getDynamicPageContentBySlug(slug, fields))
 	return pages

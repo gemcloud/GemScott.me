@@ -11,6 +11,8 @@ import WithImage from '@/components/Markdown/WithImage'
 type Props = {
 	children?: ReactNode
 	slug: string
+	// index: number
+	gemindex: string
 	title: string
 	image: string
 	markdown: string
@@ -19,6 +21,7 @@ type Props = {
 
 export default function DynamicLayout({
 	slug,
+	gemindex,
 	title,
 	image,
 	markdown,

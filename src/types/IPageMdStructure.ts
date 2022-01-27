@@ -4,6 +4,9 @@
 **/
 
 export interface PageAttributes {
+	// index: number // not use number to use string. looks " compiling /[slug]..." on error!!!
+	// maybe need toString etc...
+	gemindex: string // format A9999 S9999
 	title: string
 	slug: string
 	image: string
@@ -11,7 +14,7 @@ export interface PageAttributes {
 }
 
 export interface LinksAttributes {
-	// index: string
+	gemindex: string
 	title: string
 	href: string
 	navigation: boolean
