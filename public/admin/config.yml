@@ -3,7 +3,7 @@ backend:
   repo: gemcloud/GemScott.me
   branch: main
   local_backend: true # to make CMS work with the local git without going over the server when in development mode
-  base_url: "https://gem-scott-me.vercel.app/" # our site's base URL 
+  base_url: "https://gemscott.vercel.app/" # our site's base URL 
   auth_endpoint: "api/auth"  # used together with base_url for our custom endpoints (more on this later)
 publish_mode: editorial_workflow
 media_folder: '/images'
