@@ -18,24 +18,11 @@ collections:
     editor:
       preview: false
     fields: # The fields for each document, usually in front matter
-      - label: 'Title'
-        name: 'title'
-        widget: 'string'
-      - label: 'Image'
-        name: 'image'
-        widget: 'image'
-        required: false
-      - label: 'Display in Navigation Bar?'
-        name: 'navigation'
-        widget: 'boolean'
-        required: false
-      - label: 'Display in Footer?'
-        name: 'footer'
-        widget: 'boolean'
-        required: false
-      - label: 'Body'
-        name: 'body'
-        widget: 'markdown'
+      - {label: 'Title',        name: 'title',        widget: 'string'}
+      - {label: 'Image',        name: 'image',        widget: 'image',        required: false}
+      - {label: 'Display in Navigation Bar?',        name: 'navigation',        widget: 'boolean',        required: false}
+      - {label: 'Display in Footer?',        name: 'footer',        widget: 'boolean',        required: false}
+      - {label: 'Body',        name: 'body',        widget: 'markdown'}
   - name: 'pages'
     label: 'Pages'
     folder: '_pages/dynamic'
@@ -46,27 +33,13 @@ collections:
     editor:
       preview: false
     fields:
-      - label: 'Title'
-        name: 'title'
-        widget: 'string'
-      - label: 'Image'
-        name: 'image'
-        widget: 'image'
-        required: false
-      - label: 'Display in Navigation Bar?'
-        name: 'navigation'
-        widget: 'boolean'
-        required: false
-      - label: 'Display in Footer?'
-        name: 'footer'
-        widget: 'boolean'
-        required: false
-      - label: 'Body'
-        name: 'body'
-        widget: 'markdown'
-# blogs
-  - name: 'blogs'
-    label: 'Blogs'
+      - {label: 'Title',        name: 'title',        widget: 'string'}
+      - {label: 'Image',        name: 'image',        widget: 'image',        required: false}
+      - {label: 'Display in Navigation Bar?',        name: 'navigation',        widget: 'boolean',        required: false}
+      - {label: 'Display in Footer?',        name: 'footer',        widget: 'boolean',        required: false}
+      - {label: 'Body',        name: 'body',        widget: 'markdown'}
+  - name: "blogs"
+    label: "Blogs"
     folder: '_pages/postblogs'
     create: true
     slug: '{{slug}}'
@@ -74,32 +47,13 @@ collections:
     public_folder: ''
     editor:
       preview: true
+    sort: 'publishedAt:desc'
     fields:
-      - label: 'Title'
-        name: 'title'
-        widget: 'string'
-        required: true
-      - label: 'Meta Title'
-        name: 'metaTitle'
-        widget: 'string'
-        required: true
-      - label: 'Meta Desc'
-        name: 'metaDesc'
-        widget: 'string'
-        required: false
-      - label: 'Blog Cover Image'
-        name: 'socialImage'
-        widget: 'image'
-        required: false
-      - label: 'Post Date'
-        name: 'date'
-        widget: 'date'
-        required: true
-      - label: 'Post Tags'
-        name: 'tags'
-        widget: 'string'
-        required: false
-      - label: 'Body'
-        name: 'body'
-        widget: 'markdown'
-        
+      - { label: Title, name: title, widget: string }
+      - { label: 'SEO Meta Title', name: seoTitle, widget: string, required: true }
+      - { label: 'SEO Meta Description', name: seoDescription, widget: text, required: false }
+      - { label: 'Featured Image', name: featuredImage, widget: image, required: false }
+      - { label: 'SEO Meta Image', name: seoMetaImage, widget: image, required: false }     
+      - { label: 'Published At', name: publishedAt, widget: date, format: 'Do MMM YYYY' }
+      - { label: 'Post Tags', name: postTags, widget:string, required: false }
+      - { label: Content, name: content, widget: markdown }

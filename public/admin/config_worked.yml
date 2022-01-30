@@ -1,0 +1,106 @@
+backend:
+  name: github
+  repo: gemcloud/GemScott.me
+  branch: main
+  local_backend: true # to make CMS work with the local git without going over the server when in development mode
+  base_url: "https://gemscott.vercel.app/" # our site's base URL 
+  auth_endpoint: "api/auth"  # used together with base_url for our custom endpoints (more on this later)
+publish_mode: editorial_workflow
+media_folder: '/images'
+collections:
+  - name: 'home-page' # Used in routes, e.g., /admin/collections/blog
+    label: 'Home Page' # Used in the UI
+    folder: '_pages' # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    media_folder: '/images'
+    public_folder: ''
+    editor:
+      preview: false
+    fields: # The fields for each document, usually in front matter
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+      - label: 'Image'
+        name: 'image'
+        widget: 'image'
+        required: false
+      - label: 'Display in Navigation Bar?'
+        name: 'navigation'
+        widget: 'boolean'
+        required: false
+      - label: 'Display in Footer?'
+        name: 'footer'
+        widget: 'boolean'
+        required: false
+      - label: 'Body'
+        name: 'body'
+        widget: 'markdown'
+  - name: 'pages'
+    label: 'Pages'
+    folder: '_pages/dynamic'
+    create: true
+    slug: '{{slug}}'
+    media_folder: '/images'
+    public_folder: ''
+    editor:
+      preview: false
+    fields:
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+      - label: 'Image'
+        name: 'image'
+        widget: 'image'
+        required: false
+      - label: 'Display in Navigation Bar?'
+        name: 'navigation'
+        widget: 'boolean'
+        required: false
+      - label: 'Display in Footer?'
+        name: 'footer'
+        widget: 'boolean'
+        required: false
+      - label: 'Body'
+        name: 'body'
+        widget: 'markdown'
+# blogs
+  - name: 'blogs'
+    label: 'Blogs'
+    folder: '_pages/postblogs'
+    create: true
+    slug: '{{slug}}'
+    media_folder: '/images/blogs'
+    public_folder: ''
+    editor:
+      preview: true
+    fields:
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+        required: true
+      - label: 'Meta Title'
+        name: 'metaTitle'
+        widget: 'string'
+        required: true
+      - label: 'Meta Desc'
+        name: 'metaDesc'
+        widget: 'string'
+        required: false
+      - label: 'Blog Cover Image'
+        name: 'socialImage'
+        widget: 'image'
+        required: false
+      - label: 'Post Date'
+        name: 'date'
+        widget: 'date'
+        format: 'Do MMM YYYY'
+        required: true
+      - label: 'Post Tags'
+        name: 'tags'
+        widget: 'string'
+        required: false
+      - label: 'Body'
+        name: 'body'
+        widget: 'markdown'
+        

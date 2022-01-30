@@ -100,3 +100,10 @@ Yarn build worked!
 ```
 date: '2022-01-29'
 ```
+
+solution: we have to format Date
+on netlify config.yml
+
+```
+    format: 'Do MMM YYYY'
+```

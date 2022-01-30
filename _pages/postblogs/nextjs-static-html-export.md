@@ -1,10 +1,10 @@
 ---
 title: 'Next.js static HTML export'
-metaTitle: 'Next.js static HTML export'
-metaDesc: 'Creating a static HTML export Next.js application'
-socialImage: images/blogs/03-10-2021.jpg
-date: '2021-10-03'
-tags:
+seoTitle: 'Next.js static HTML export'
+seoDescription: 'Creating a static HTML export Next.js application'
+featuredImage: images/blogs/03-10-2021.jpg
+publishedAt: '2021-10-03'
+postTags:
   - nextjs
 ---
 

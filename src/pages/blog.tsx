@@ -46,7 +46,7 @@ export default function Blog({ posts }: any) {
 									width={650}
 									height={340}
 									alt={frontmatter.title}
-									src={`/${frontmatter.socialImage}`}
+									src={`/${frontmatter.featuredImage}`}
 								/>
 								<h1 className='p-4'>{frontmatter.title}</h1>
 							</a>

@@ -1,0 +1,52 @@
+backend:
+  name: github
+  repo: gemcloud/GemScott.me
+  branch: main
+  local_backend: true # to make CMS work with the local git without going over the server when in development mode
+  base_url: "https://gemscott.vercel.app/" # our site's base URL 
+  auth_endpoint: "api/auth"  # used together with base_url for our custom endpoints (more on this later)
+publish_mode: editorial_workflow
+media_folder: '/images'
+collections:
+  - name: "blog"
+    label: "Blog"
+    label_singular: "Post"
+    folder: "src/pages/blog"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post.template"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "products"
+    label: "Products"
+    label_singular: "Product"
+    folder: "src/pages/products"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page.template"}
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Ingredients", name: "ingredients", widget: "list"}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/about/index.md"
+        label: "About"
+        name: "about"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page.template"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - file: "src/pages/index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page.template"}
+          - {label: "Smoothies Section Heading", name: "smoothiesHeading", widget: "string"}
+          - {label: "Posts Section Heading", name: "postsHeading", widget: "string"}
+          - {label: "Contact Section Heading", name: "contactHeading", widget: "string"}
+

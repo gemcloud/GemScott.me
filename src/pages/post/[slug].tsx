@@ -10,11 +10,11 @@ import BlogLayout from '@/components/Layouts/BlogLayout'
 interface IProps {
 	frontmatter: {
 		title: string
-		metaTitle: string
-		metaDesc: string
-		socialImage: string
-		date: string
-		tags: string
+		seoTitle: string
+		seoDescription: string
+		featuredImage: string
+		publishedAt: string
+		postTags: string
 	}
 	content: string
 }
