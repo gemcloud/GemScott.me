@@ -87,3 +87,16 @@ https://github.com/cleggacus/next-blog-medium-tutorial
 ```
     >npm i remark-gfm
 ```
+
+## Error MarkDown file date
+
+```
+date: 2022-01-29
+```
+
+Error serializing `.posts[5].frontmatter.date` returned from `getStaticProps` in "/blog".
+Yarn build worked!
+
+```
+date: '2022-01-29'
+```
