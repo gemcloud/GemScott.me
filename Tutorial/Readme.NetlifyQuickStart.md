@@ -52,7 +52,9 @@ Goto URL : (https://vercel.com/dashboard)
 
 4. Creating an auth endpoint to login into Netlify CMS on Vercel
 
-##
+## NetlifyCMS with GitHub OAuth authentication hosted on Vercel
+
+https://www.component-driven.dev/articles/netlify-cms-github-oauth-vercel
 
 Setup OAuth client in Next.js app
 

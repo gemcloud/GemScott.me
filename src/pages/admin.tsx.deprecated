@@ -1,0 +1,52 @@
+import React from 'react'
+import dynamic from 'next/dynamic'
+import CMS123 from 'netlify-cms-app' // import from here?
+
+// This global flag enables manual initialization.
+// window.CMS_MANUAL_INIT = true;
+// const CMS_CONFIG = {}
+const Loading = () => (
+	<div className='flex min-h-screen items-center justify-center'>
+		<p className='text-xl font-semibold text-gray-500'>
+			🐞...Loading NetlifyCMS Admin...
+		</p>
+	</div>
+)
+
+const DynamicComponentWithCustomLoading = dynamic((): any => CMS123.init(), {
+	ssr: false,
+	loading: Loading,
+})
+// synatx:  const Component = dynamic(() => import('Your component'),{...options})
+// const VguanComponent = dynamic(() : any => import('netlify-cms-app').then(cms => {cms.NetlifyCmsApp.init()}), {
+// 	// loading: () => '🐞...',
+// 	loading: Loading,
+// })
+// const SyntaxHighlighter = dynamic(
+// 	() => import('react-syntax-highlighter/dist/cjs/prism')
+// )
+
+// const NetlifyCMS = dynamic(
+// 	(): any =>
+// 		import('netlify-cms-app').then(cms => {
+// 			// CMS.NetlifyCmsApp.init()
+// 			// CMS.init({ CMS_CONFIG })
+// 			cms.init()
+// 		}),
+// 	{
+// 		ssr: false,
+// 		loading: Loading,
+// 	}
+// )
+
+// const CMS = dynamic(
+// 	() =>
+// 		import('netlify-cms-app').then(CMS => {
+// 			CMS.init()
+// 		}),
+// 	{ ssr: false, loading: Loading }
+// )
+
+const Admin = () => <DynamicComponentWithCustomLoading />
+
+export default Admin
