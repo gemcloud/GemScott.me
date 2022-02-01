@@ -1,5 +1,5 @@
 ---
-gemindex: A900
+gemindex: A300
 title: Blog
 image: tigers/tiger-graduates-blue.webp
 navigation: true

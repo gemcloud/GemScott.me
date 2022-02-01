@@ -1,4 +1,5 @@
 ---
+gemindex: A400
 title: Contact
 image: tigers/tiger-graduates-blue.webp
 navigation: true

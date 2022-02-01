@@ -8,7 +8,7 @@ footer: false
 
 ### Personal Information
 
-Hi, I'm Scott Tiger. I'm 30 years old, living in USA.
+Hi, I'm Scott Tiger. I'm 30 years old, living in Meta.
 I'm a professional Full Stact Developer, currently working at The Mars.
 
 In general I really love to travel. My favourite kind of holiday is a roadtrip with a campervan, doing lots of hikes in nature and going for a swim in the sea at the end of the day!

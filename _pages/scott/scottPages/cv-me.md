@@ -33,3 +33,15 @@ CRM
 ERP
 
 ### My timeline
+
+September 2014 - June 2017
+Bachelor Applied Computer Sciences at ABC University
+
+February 2017 - June 2017
+Co-op as Swift Developer at Apply,
+
+September 2017 - October 2018
+Full Stack Developer at Google, USA
+
+October 2018 - now
+Frontend Developer at Amazon, Canada
