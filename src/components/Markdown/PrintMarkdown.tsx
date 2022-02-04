@@ -7,15 +7,6 @@ interface IProps {
 }
 
 export default function PrintMarkdown({ markdownString }: IProps) {
-	// const content = unified()
-	// 	.use(parse)
-	// 	.use(remark2react, {
-	// 		remarkReactComponents: {
-	// 			a: CustomLink,
-	// 		},
-	// 	})
-	// 	.processSync(markdown).result  //Compile error!!!
-
 	return (
 		<div className={markdownStyles.markdown}>
 			<MarkdownToHtml content={markdownString}></MarkdownToHtml>

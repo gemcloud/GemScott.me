@@ -1,7 +1,7 @@
 ---
 gemindex: A00
 title: Home
-image: images/tigeres/ScottTiger_me.png
+image: tigers/ScottTiger_me.png
 navigation: true
 ---
 

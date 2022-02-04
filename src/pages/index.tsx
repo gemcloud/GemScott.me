@@ -1,16 +1,17 @@
-/** To explain what the function does.
- * @param :
- * @return {JSX.Element} The JSX Code for the Home Page
+/**
+ * The WebSite index page
+ * @param : page is the header of the markdown file.
+ * @param : links is the Navigation bar items that generate by markdown files.
+ * @return DynamicLayout Component.
  */
 import React from 'react'
-// import { NextPage, GetStaticProps } from 'next'
 import { GetStaticProps } from 'next'
-
-import DynamicLayout from '@/components/DynamicLayout'
+import DynamicLayout from '@/components/Layouts/DynamicLayout'
 import { getPageContentBySlug } from '@/libs/gemMarkdown'
 import { getNavigationLinks } from '@/libs/gemNavigation'
 import { LinksAttributes, PageAttributes } from '@/types/IPageMdStructure'
 
+// declare type.
 type Props = {
 	page: PageAttributes
 	links: LinksAttributes[] // PropTypes.arrayOf
@@ -32,15 +33,12 @@ function IndexPage({ page, links }: Props) {
 
 // get data for current page
 export const getStaticProps: GetStaticProps = async () => {
-	// get links data
+	// get web site navigation bar data (links data)
 	const links_ = getNavigationLinks()
-
-	// console.log(links_)
-	// get pages data
-	// get md data for example.
-	// const content = await import(`../content/pages/${'home'}.md`)
-	// return { props: { content: content.default } }
+	// Gets the content of all pages.
+	// const homeName = 'scottHome'
 	const page = getPageContentBySlug('home', [
+		// const page = getPageContentBySlug('scottHome', [
 		'gemindex',
 		'title',
 		'image',
@@ -48,16 +46,12 @@ export const getStaticProps: GetStaticProps = async () => {
 		'content',
 	])
 
-	// const page = JSON.stringify(pages)
-
-	// console.log(page)
-
 	return {
 		props: {
 			page: {
 				...page,
 				// markdown: page.content
-				markdown: (page as any).content,
+				markdown: (page as any).content, // TS style.
 			},
 			links: { ...links_ },
 		},

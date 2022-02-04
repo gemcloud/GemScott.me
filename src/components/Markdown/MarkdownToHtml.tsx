@@ -10,7 +10,8 @@ export default function MarkdownToHtml({ content }: IProps) {
 	return (
 		<ReactMarkdown remarkPlugins={[gfm]}>
 			{/* A testing Markdown string!!!
-			 *React-Markdown* now supports ~strikethrough~. Thanks to gfm plugin. */}
+			 *  React-Markdown* now supports ~strikethrough~. Thanks to gfm plugin.
+			 */}
 			{content}
 		</ReactMarkdown>
 	)

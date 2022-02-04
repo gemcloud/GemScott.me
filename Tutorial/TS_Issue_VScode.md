@@ -115,6 +115,9 @@ Object.assign(obj, {key2: 'dog'});
 
 -Solution : add "(fields: string[] = [])"
 
+- Solution : let name1:string = person.name!;
+  // ^ note the exclamation mark here
+
 ```
 export function getAllDynamicPages(fields: string[] = []) {
 ```

@@ -1,6 +1,6 @@
 import React from 'react'
 import { LinksAttributes, PageAttributes } from '@/types/IPageMdStructure'
-import DynamicLayout from '@/components/DynamicLayout'
+import DynamicLayout from '@/components/Layouts/DynamicLayout'
 import {
 	getDynamicPageContentBySlug,
 	getAllDynamicPages,

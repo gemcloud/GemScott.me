@@ -10,10 +10,10 @@ import { join } from 'path'
 import matter from 'gray-matter'
 // import { toUnicode } from 'punycode'
 
-const pagesDirectory = join(process.cwd(), '_pages')
+const pagesDirectory = join(process.cwd(), '_pages/scott')
 // const dynamicPagesDirectory = join(pagesDirectory, 'dynamic')
 // const dynamicPagesDirectory = join(pagesDirectory, 'resume')
-const dynamicPagesDirectory = join(pagesDirectory, 'freelancer')
+const dynamicPagesDirectory = join(pagesDirectory, 'scottPages')
 
 /**
  * Gets all the files (slugs) in a directory
@@ -34,7 +34,7 @@ export function getSlugsFromDirectory(dir: fs.PathLike): string[] {
  * @param {string[]} fields : defined fields.
  * @return {string[]} : the contents of a file
  */
-// export function getBySlug(dir: string, slug: string, fields: string[] = []) {
+
 export function getBySlug(dir: string, slug: string, fields: string[] = []) {
 	const realSlug = slug.replace(/\.md$/, '')
 

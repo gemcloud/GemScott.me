@@ -1,6 +1,5 @@
 import React from 'react'
 import { NextPage, GetStaticProps } from 'next'
-import { Header } from '@/components/Header/Header'
 
 type Props = {
 	content: { attributes: HomeAttributes }
@@ -16,7 +15,6 @@ const PageTemplate: NextPage<Props> = ({ content }: Props) => {
 	const { attributes } = content
 	return (
 		<>
-			<Header></Header>
 			<h1>{attributes.hero_title}</h1>
 			<p>{attributes.hero_description}</p>
 			<img src={attributes.hero_image} alt='hero image' />

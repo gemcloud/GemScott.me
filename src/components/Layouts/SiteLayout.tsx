@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import Header from '@/components/Header'
+import Header from '@/components/Header/Header'
 import Breadcrumb from '@/components/Breadcrumb'
 import Container from '@/components/Container'
 import { LinksAttributes } from '@/types/IPageMdStructure'
@@ -13,7 +13,7 @@ type Props = {
 	links: LinksAttributes[]
 }
 
-export default function Layout({ children, pageTitle, links }: Props) {
+export default function SiteLayout({ children, pageTitle, links }: Props) {
 	return (
 		<div className='flex min-h-screen flex-col'>
 			{/* <SocialBar /> */}
