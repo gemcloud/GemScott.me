@@ -14,7 +14,6 @@ export default function Header({ links }: Props) {
 
 	const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
 	const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen)
-	const menuToggle = mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
 
 	return (
 		<header>
@@ -54,12 +53,12 @@ export default function Header({ links }: Props) {
 								buttonToggleOpened={mobileMenuOpen}
 								clickHandler={() => toggleMenu()}
 							/>
-							<div
-								className={` ${menuToggle} fixed top-24 right-0 z-10 h-full w-full transform overflow-y-auto bg-gray-200 opacity-95 duration-300 ease-in-out dark:bg-gray-800`}
-							>
-								{/* Mobile Menu */}
-								<MobileMenuGray links={links} />
-							</div>
+							{/* Mobile Menu */}
+							<MobileMenuGray
+								TogglMenuOpened={mobileMenuOpen}
+								clickHandler={() => toggleMenu()}
+								links={links}
+							/>
 						</div>
 					</div>
 				</div>
