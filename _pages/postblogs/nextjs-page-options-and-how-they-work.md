@@ -37,7 +37,7 @@ export default function Contact() {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<div className='my-2 max-w-xs overflow-hidden rounded shadow-lg'>
+			<div className='shadow-lg my-2 max-w-xs overflow-hidden rounded'>
 				<div className='px-6 py-4'>
 					<div className='mb-2 text-xl font-bold'>Contact us</div>
 					<p className='text-grey-darker text-base'>
@@ -115,7 +115,7 @@ function Shows({ shows }) {
 			{shows.top.map(show => (
 				<div
 					key={show.id}
-					className='my-2 max-w-xs overflow-hidden rounded shadow-lg '
+					className='shadow-lg my-2 max-w-xs overflow-hidden rounded '
 				>
 					<img
 						className='h-80 w-full flex-1 object-cover'

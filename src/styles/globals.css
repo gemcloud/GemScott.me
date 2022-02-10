@@ -49,3 +49,25 @@ svg:focus,
 a:focus-visible {
 	outline: none;
 }
+
+/* start: timeline codes */
+
+.top-timelineCircle {
+	top: calc(50% - 0.5em);
+}
+
+.timeline-container::after {
+	left: calc(50% - 2px);
+}
+
+.timeline-item:after {
+	/* box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.1); */
+	box-shadow: 1px -1px 1px rgba(39, 245, 114, 0.8);
+	top: calc(50% - 0.5rem);
+}
+
+.timeline-item:nth-child(even)::after {
+	/* box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1); */
+	box-shadow: -1px 1px 1px rgba(39, 245, 114, 0.8);
+}
+/* end: timeline codes */

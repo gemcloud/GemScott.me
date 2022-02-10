@@ -13,7 +13,7 @@ const NaviLogin = () => {
 
 	return (
 		// <div className="sticky top-0 z-20 bg-white shadow-lg py-2 dark:bg-black md:mb-6 md:py-6"></div>
-		<div className='sticky top-0 z-20 bg-white py-2 shadow-lg dark:bg-black md:mb-6 md:py-6'>
+		<div className='top-0 shadow-lg sticky z-20 bg-white py-2 dark:bg-black md:mb-6 md:py-6'>
 			{/* // <nav className="sticky bg-white py-2 shadow-lg dark:bg-black "> */}
 			<div className='mx-auto max-w-6xl px-4'>
 				<div className='flex justify-between'>
