@@ -26,7 +26,7 @@ export default function Navigation({ links }: Props) {
 		<>
 			{/* <Hamburger toggleMenu={toggleMenu} /> */}
 			<nav
-				className={`${menuStyles} font-open-sans text-gray-333 inset-0 sm:inset-auto fixed flex h-full flex-col justify-between bg-fuchsia-100 py-20 text-lg sm:relative sm:mr-8 sm:flex sm:flex-row sm:py-0 sm:text-sm`}
+				className={`${menuStyles} font-open-sans text-gray-333 fixed inset-0 flex h-full flex-col justify-between bg-fuchsia-100 py-20 text-lg sm:relative sm:inset-auto sm:mr-8 sm:flex sm:flex-row sm:py-0 sm:text-sm`}
 			>
 				<div className='flex flex-col sm:flex-row'>
 					{navLinks.map(({ title, href }) => {

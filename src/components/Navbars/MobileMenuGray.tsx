@@ -47,7 +47,7 @@ const MobileMenuGray = (param: MyProps) => {
 	return (
 		<nav
 			arai-label='mobile navigation'
-			className={`${menuToggle}  dark:bg-gray-800mt-8  top-24 right-0 fixed fixed z-10 h-full h-full w-full transform overflow-y-auto bg-gray-200 opacity-95 duration-300 ease-in-out `}
+			className={`${menuToggle} fixed top-24 right-0 z-10 mt-8 h-full w-full transform overflow-y-auto bg-gray-200 opacity-95 duration-300 ease-in-out dark:bg-gray-800`}
 		>
 			{navLinks.map(({ title, href }) => {
 				const active =

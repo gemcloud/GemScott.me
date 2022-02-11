@@ -85,9 +85,9 @@ const CV = () => {
 									target='_blank'
 									rel='noopener noreferrer'
 									className='shadow-link hover:shadow-link-hover dark:shadow-link-dark dark:hover:shadow-link-dark-hover cursor-pointer transition-shadow'
-									href='https://www.the-reference.be'
+									href='https://www.Samsung.ca'
 								>
-									The Reference
+									The Samsung
 								</a>
 								.
 							</p>
@@ -117,7 +117,7 @@ const CV = () => {
 					<div className='col-span-1 mx-6 mt-6 sm:col-span-2 sm:mx-0 sm:mt-0'>
 						<h2 className='mb-4 text-xl font-bold lg:text-2xl'>My timeline</h2>
 						<div className='timeline-container relative flex w-full flex-col after:absolute after:h-full after:w-1 after:bg-lime-700 dark:after:bg-dark'>
-							<TimelineItem index={0} url='https://reference.be'>
+							<TimelineItem index={0} url='https://www.google.ca'>
 								<time className='text-grey text-xs'>October 2018 - now</time>
 								<p>
 									Frontend Developer at{' '}
@@ -125,14 +125,14 @@ const CV = () => {
 										target='_blank'
 										rel='noopener noreferrer'
 										className='shadow-link hover:shadow-link-hover dark:shadow-link-dark dark:hover:shadow-link-dark-hover cursor-pointer transition-shadow'
-										href='https://reference.be'
+										href='https://www.google.ca'
 									>
-										The Reference
+										Google
 									</a>
-									, Ghent
+									, Vancouver
 								</p>
 							</TimelineItem>
-							<TimelineItem index={1} url='https://happsdevelopment.com'>
+							<TimelineItem index={1} url='https://www.amazon.ca/'>
 								<time className='text-grey text-xs'>
 									September 2017 - October 2018
 								</time>
@@ -142,14 +142,14 @@ const CV = () => {
 										target='_blank'
 										rel='noopener noreferrer'
 										className='shadow-link hover:shadow-link-hover dark:shadow-link-dark dark:hover:shadow-link-dark-hover cursor-pointer transition-shadow'
-										href='https://happsdevelopment.com'
+										href='https://www.amazon.ca/'
 									>
-										Happs Development
+										Amazon
 									</a>
-									, Ghent
+									, Vancouver
 								</p>
 							</TimelineItem>
-							<TimelineItem index={2} url='https://getrialto.com'>
+							<TimelineItem index={2} url='https://www.microsoft.com/en-ca'>
 								<time className='text-grey text-xs'>
 									February 2017 - June 2017
 								</time>
@@ -159,14 +159,14 @@ const CV = () => {
 										target='_blank'
 										rel='noopener noreferrer'
 										className='shadow-link hover:shadow-link-hover dark:shadow-link-dark dark:hover:shadow-link-dark-hover cursor-pointer transition-shadow'
-										href='https://getrialto.com'
+										href='https://www.microsoft.com/en-ca'
 									>
-										Rialto
+										Microsoft
 									</a>
-									, Ghent
+									, Vancouver
 								</p>
 							</TimelineItem>
-							<TimelineItem index={3} url='https://hogent.be'>
+							<TimelineItem index={3} url='https://UBC.ca'>
 								<time className='text-grey text-xs'>
 									September 2014 - June 2017
 								</time>
@@ -176,13 +176,13 @@ const CV = () => {
 										target='_blank'
 										rel='noopener noreferrer'
 										className='shadow-link hover:shadow-link-hover dark:shadow-link-dark dark:hover:shadow-link-dark-hover cursor-pointer transition-shadow'
-										href='https://hogent.be'
+										href='https://UBC.ca'
 									>
-										Hogeschool Gent
+										UBC
 									</a>
 								</p>
 							</TimelineItem>
-							<TimelineItem index={4} url='https://telenet.be'>
+							<TimelineItem index={4} url='https://EA.ca'>
 								<time className='text-grey text-xs'>
 									May 2012 - August 2014
 								</time>
@@ -192,11 +192,11 @@ const CV = () => {
 										target='_blank'
 										rel='noopener noreferrer'
 										className='shadow-link hover:shadow-link-hover dark:shadow-link-dark dark:hover:shadow-link-dark-hover cursor-pointer transition-shadow'
-										href='https://telenet.be'
+										href='https://EA.ca'
 									>
-										Telenet
+										EA
 									</a>
-									, Lochristi
+									, Vancouver
 								</p>
 							</TimelineItem>
 						</div>

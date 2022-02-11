@@ -15,14 +15,40 @@ export default function Header({ links }: Props) {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
 	const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen)
 
+	const LogoLetter = ({ letter }: any) => (
+		<span className='letter relative top-0 inline-block'>{letter}</span>
+	)
 	return (
 		<header>
-			<div className='top-0 shadow-lg sticky z-20 bg-white py-2 dark:bg-black md:mb-6 md:py-6'>
+			<div className='shadow-lg sticky top-0 z-20 bg-white py-2 dark:bg-black md:mb-6 md:py-6'>
 				<div className='container mx-auto flex items-center justify-between px-4 lg:max-w-4xl'>
 					{/* logo + Name */}
 					<div>
 						<Link href='/'>
-							<a
+							<a className='logo flex flex-row text-lg lg:text-2xl'>
+								<Image
+									src={imgLogo}
+									alt='Logo'
+									className='mr-2 h-8 w-8'
+									width={30}
+									height={30}
+								/>
+								<span>&nbsp;</span>
+								<span className='text-lg font-semibold text-gray-500'>
+									<LogoLetter letter='s' />
+									<LogoLetter letter='c' />
+									<LogoLetter letter='o' />
+									<LogoLetter letter='t' />
+									<LogoLetter letter='t' />
+									<span>&nbsp;</span>
+									<LogoLetter letter='t' />
+									<LogoLetter letter='i' />
+									<LogoLetter letter='g' />
+									<LogoLetter letter='e' />
+									<LogoLetter letter='r' />
+								</span>
+							</a>
+							{/* <a
 								href='#'
 								className='font-medium uppercase tracking-wider text-gray-900 transition-colors hover:text-sky-500 dark:text-white'
 							>
@@ -36,7 +62,7 @@ export default function Header({ links }: Props) {
 								<span className='text-lg font-semibold text-gray-500'>
 									Scott Tiger
 								</span>
-							</a>
+							</a> */}
 						</Link>
 					</div>
 					{/* Menu = navbar + dark + humbger */}

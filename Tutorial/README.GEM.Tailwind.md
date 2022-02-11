@@ -103,3 +103,9 @@ add 'light' ? 'dark' : 'light' on "Header.tsx"
 		onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
 	/>
 ```
+
+## 2022-02-10 : tailwind.config.js --> inset: --> effect mobile-menu & time-line position
+
+- Why I have to remove "inset"
+- primary on tailwind.config.js
+- Theming React components with Tailwind CSS [https://blog.logrocket.com/theming-react-components-tailwind-css/]

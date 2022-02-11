@@ -56,7 +56,7 @@ const Search = () => {
 						name='search'
 						value={query}
 					/>
-					<button type='submit' className='right-0 top-0 absolute mt-5 mr-4'>
+					<button type='submit' className='absolute right-0 top-0 mt-5 mr-4'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							fill='currentColor'

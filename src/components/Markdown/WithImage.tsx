@@ -12,7 +12,6 @@ interface IProps {
 }
 
 export default function WithImage({ markdown, image }: IProps) {
-	// const webPSrc = require(`../../images/${image}?webp`) // passed!!!
 	const imgSrc = require(`../../../public/images/${image}`)
 
 	return (
@@ -21,12 +20,13 @@ export default function WithImage({ markdown, image }: IProps) {
 				<PrintMarkdown markdownString={markdown} />
 			</div>
 			<div className='w-100 flex items-center justify-center md:w-1/3'>
-				{/* <picture>
-					<source srcSet={webPSrc} type='image/webp' />
-					<source srcSet={imgSrc} type='image/jpeg' />
-					<img src={imgSrc} alt='image alt' />
-				</picture> */}
-				<Image src={imgSrc} alt='image alt'></Image>
+				<Image
+					className='rounded-full'
+					priority
+					alt='image alt'
+					src={imgSrc}
+					placeholder='blur'
+				/>
 			</div>
 		</div>
 	)
