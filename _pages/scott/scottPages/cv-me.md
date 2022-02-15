@@ -4,6 +4,7 @@ title: CV
 image: tigers/tiger-graduates-blue.webp
 navigation: true
 footer: false
+redirect: /cv
 ---
 
 ### A bit about me

@@ -1,9 +1,10 @@
 ---
 gemindex: A400
 title: Contact
-image: tigers/tiger-graduates-blue.webp
+image: tigers/tiger-chef.jpg
 navigation: true
 footer: false
+redirect: #/ContactForm
 ---
 
 ### Contact

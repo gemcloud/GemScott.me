@@ -1,7 +1,7 @@
 ---
 gemindex: A100
 title: Personal
-image: tigers/tiger-graduates-blue.webp
+image: tigers/tiger-businessman.jpg
 navigation: true
 footer: false
 ---
