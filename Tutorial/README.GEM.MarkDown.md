@@ -1,4 +1,10 @@
-## MarkDown as your CMS
+## MarkDown (eXtension) as your CMS
+
+## terms:
+
+- MDX: MDX is a superset of Markdown. It allows you to write JSX inside markdown. This includes importing and rendering React components!
+- "gray-matter" read DM(X) files.
+- frontmatter:
 
 ### solution one : https://blog.logrocket.com/how-to-safely-render-markdown-using-react-markdown/
 
