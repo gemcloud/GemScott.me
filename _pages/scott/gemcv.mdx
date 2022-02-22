@@ -3,23 +3,21 @@ gemindex: A00
 birthdate: '1999-09-09'
 title: Scott Tiger
 image: me_face-only.png
+ingredients: ['1000 ml water', '10 grams dried kelp', '40 grams bonito flakes']
 technologies: [
+		{ name: 'Net Core', numberOfStars: 4.8 },
+		{ name: 'C#', numberOfStars: 4.8 },
+		{ name: 'SQL Server', numberOfStars: 5 },
+		{ name: 'No SQL', numberOfStars: 2 },
+		{ name: 'JavaScript', numberOfStars: 4 },
 		{ name: 'React', numberOfStars: 4.8 },
-		{ name: 'Vue.js', numberOfStars: 1.6 },
-		{ name: 'Angular', numberOfStars: 3.8 },
-		{ name: 'Gatsby.js', numberOfStars: 3 },
 		{ name: 'Next.js', numberOfStars: 5 },
-		{ name: 'React Native', numberOfStars: 1 },
-		{ name: 'Swift', numberOfStars: 2 },
-		{ name: 'Wordpress', numberOfStars: 3 },
 		{ name: 'ES6', numberOfStars: 4.2 },
 		{ name: 'HTML5', numberOfStars: 5 },
 		{ name: 'CSS3', numberOfStars: 4 },
+		{ name: 'React Native', numberOfStars: 0 },
+		{ name: 'Flutter', numberOfStars: 0 },
 	]
-tips:
-  [
-    'The white powder on the surface of dried kelp is "umami", so do not remove it.',
-  ]	
 timelines:
   [
     	{
@@ -58,6 +56,51 @@ timelines:
     
 ---
 
-## Gem pattern balbalbal...
+# demo Markdown call components
 
-<UnicodeStarRating />
+### VM1082:3 Component Timelines was not imported, exported, or provided by MDXProvider as global scope
+
+<Ingredients />
+
+### Technologies Rating
+
+<Technologies />
+
+### My Timelines
+
+<CVTimelines />
+
+# Sample Markdown
+
+This is some basic, sample markdown.
+
+## Second Heading
+
+- Unordered lists, and:
+  1.  One
+  2.  Two
+  3.  Three
+- More
+
+> Blockquote
+
+And **bold**, _italics_, and even _italics and later **bold**_. Even strikethrough. [A link](https://markdowntohtml.com) to somewhere.
+
+And code highlighting:
+
+```
+var foo = 'bar';
+
+	function baz(s) {
+	return foo + ':' + s;
+	}
+
+```
+
+Or inline code like `var foo = 'bar';`.
+
+Or an image of bears
+
+![bears](http://placebear.com/200/200)
+
+The end ...

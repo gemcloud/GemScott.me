@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+	i18n: {
+		locales: ['en', 'ja'],
+		defaultLocale: 'en',
+		localeDetection: false,
+	},
 	reactStrictMode: true,
 	trailingSlash: true,
 	images: {

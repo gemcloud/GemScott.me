@@ -1,5 +1,4 @@
 import React from 'react'
-// import { ICvTmeline } from '@/types/ICvTmeline'
 
 type Props = {
 	timeKey: string
@@ -11,7 +10,6 @@ type Props = {
 	cardDetailedText: string
 }
 
-// export default function CvCard(param: ICvTmeline) {
 export default function CvCard(param: Props) {
 	return (
 		<>

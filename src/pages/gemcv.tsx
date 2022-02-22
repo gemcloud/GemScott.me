@@ -7,11 +7,8 @@ import TimeLineVerticalAlternating from '@/components/Timelines/TimeLineVertical
 import { GetStaticProps } from 'next'
 import { getPostItems } from '@/utils/GemMdxUtils'
 import { ICvTmeline } from '@/types/ICvTmeline'
-
-type technology = {
-	name: string
-	numberOfStars: number
-}
+import PrintMarkdown from '@/components/Markdown/PrintMarkdown'
+import { ITechnology } from '@/types/ITechnology'
 
 type myCVData = {
 	slug: string
@@ -20,7 +17,7 @@ type myCVData = {
 	birthdate: string
 	title: string
 	image: string
-	technologies: technology[]
+	technologies: ITechnology[]
 	timelines: ICvTmeline[]
 	others: string[]
 }
@@ -57,7 +54,7 @@ const gemcv: React.FC<Props> = ({ cvData }: Props) => {
 								// placeholder='blur'
 							/>
 							<p>Hello, is it me you&apos;re looking for?</p>
-							<p>{cvData.content}</p>
+							<PrintMarkdown markdownString={cvData.content} />
 						</div>
 					</div>
 					<div className='col-span-1 mx-6 mt-6 flex flex-col justify-center sm:col-span-2 sm:mx-0 sm:mt-0'>

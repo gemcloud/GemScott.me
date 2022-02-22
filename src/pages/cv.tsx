@@ -1,210 +1,96 @@
 import React, { useEffect } from 'react'
-import AOS from 'aos'
-import Head from 'next/head'
-import Image from 'next/image'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import the icons you need
-import { faStar as faStarEmpty } from '@fortawesome/free-regular-svg-icons'
-import { faStar as faStarFull } from '@fortawesome/free-solid-svg-icons'
-import TimelineItem from '@/components/Timelines/TimelineItem'
-import me from '../../public/me_face-only.png'
+import { GetStaticProps } from 'next'
+import dynamic from 'next/dynamic'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
+// import { useRouter } from 'next/router'
+import { useMdxComponentsContext } from '@/context/MdxComponents'
+import { getPost } from '@/utils/GemMdxUtils'
+import { ICV } from '@/types/ICV'
+import Technologies from '@/components/StarRatings/Technologies'
+import CVTimelines from '@/components/Timelines/CVTimelines'
 
-// import the icons you need
-// import {
-// 	faSearch,
-// 	faAmbulance,
-// 	faAnchor,
-// } from '@fortawesome/free-solid-svg-icons'
+// #### 1. components on MDX files
+// V4.0 use ==> React.ComponentProps < typeof mdx.MDXProvider > ['components']
 
-const CV = () => {
-	// To calculate the time between 2 Dates in typescript
-	const age = Math.floor(
-		(new Date().getTime() - new Date('1999-09-09').getTime()) / 3.15576e10
-	)
+const components = {
+	Technologies,
+	CVTimelines,
+	// Ingredients, use dynamic. // import Ingredients from '@/components/Ingredients'
+	Ingredients: dynamic(() => import('../components/Ingredients')),
+}
 
-	const technologies = [
-		{ name: 'React', numberOfStars: 4 },
-		{ name: 'Vue.js', numberOfStars: 2 },
-		{ name: 'Angular', numberOfStars: 2 },
-		{ name: 'Gatsby.js', numberOfStars: 3 },
-		{ name: 'Next.js', numberOfStars: 4 },
-		{ name: 'React Native', numberOfStars: 3 },
-		{ name: 'Swift', numberOfStars: 2 },
-		{ name: 'Wordpress', numberOfStars: 3 },
-		{ name: 'ES6', numberOfStars: 4 },
-		{ name: 'HTML', numberOfStars: 5 },
-		{ name: 'CSS', numberOfStars: 4 },
-	]
-	const renderStars = (amount: number) =>
-		// eslint-disable-next-line prefer-spread
-		Array.apply(null, [1, 2, 3, 4, 5]).map((_, i) => (
-			<span className='star text-blue-900' key={i}>
-				<FontAwesomeIcon
-					className={`h-6 w-6 fill-current text-blue-900 ${
-						i < amount ? 'full' : ''
-					}`}
-					icon={i < amount ? faStarFull : faStarEmpty}
-				/>
-			</span>
-		))
+// #### 2.Props
+type Props = {
+	source: MDXRemoteSerializeResult
+	frontMatter: Omit<ICV, 'slug'>
+}
+
+// #### Main function
+const CV: React.FC<Props> = ({ source, frontMatter }: Props) => {
+	// const router = useRouter()
+	const lang = 'en' // router.locale
+
+	const { setLang, setIngredients, setTechnologies, setTimelines } =
+		useMdxComponentsContext()
+
 	useEffect(() => {
-		AOS.init({
-			duration: 1000,
-		})
-	}, [])
+		setLang(lang)
+		setIngredients(frontMatter.ingredients)
+		setTechnologies(frontMatter.technologies)
+		setTimelines(frontMatter.timelines)
+	}, [
+		frontMatter.ingredients,
+		frontMatter.technologies,
+		frontMatter.timelines,
+		lang,
+		setIngredients,
+		setTechnologies,
+		setTimelines,
+		setLang,
+	])
 
 	return (
 		<>
-			<Head>
-				<title>Scott Tiger&apos; Portfolio - CV</title>
-			</Head>
-			<section id='cv' className='dark:bg-lightgrey text-text'>
-				<div className='container mx-auto grid grid-cols-1 py-12 sm:grid-cols-3 sm:gap-16'>
-					<div className='col-span-1 mx-6 sm:mx-0'>
-						<div className='text-center'>
-							<Image
-								className='rounded-full'
-								priority
-								alt='Profile picture'
-								src={me}
-								placeholder='blur'
-							/>
-							<p>Hello, is it me you&apos;re looking for?</p>
-						</div>
-					</div>
-					<div className='col-span-1 mx-6 mt-6 flex flex-col justify-center sm:col-span-2 sm:mx-0 sm:mt-0'>
-						<h1 className='mb-4 text-2xl font-bold md:text-4xl'>
-							A bit about me
-						</h1>
-						<div>
-							<p>
-								Hi, I&apos;m Thomas. I&apos;m {age} years old, living in
-								Vancouver. I&apos;m a professional Frontend Developer, currently
-								working at{' '}
-								<a
-									target='_blank'
-									rel='noopener noreferrer'
-									className='shadow-link hover:shadow-link-hover dark:shadow-link-dark dark:hover:shadow-link-dark-hover cursor-pointer transition-shadow'
-									href='https://www.Samsung.ca'
-								>
-									The Samsung
-								</a>
-								.
-							</p>
-							<p>
-								What I like most about Frontend development is the ever-changing
-								technology. New frameworks being released daily (one better than
-								the other...), constant improvements to existing frameworks,
-								yearly new features in ECMAScript..
-							</p>
-							<p>
-								I&apos;m always eager to discover the latest updates, apps,
-								technologies..!
-							</p>
-						</div>
-					</div>
-					<div className='col-span-1 mx-6 mt-6 sm:mx-0 sm:mt-0'>
-						<h2 className='mb-4 text-xl font-bold lg:text-2xl'>Technologies</h2>
-						{technologies.map((technology, i) => (
-							<div key={i} className='mb-4 flex justify-between'>
-								<div>{technology.name}</div>
-								<div className='flex'>
-									{renderStars(technology.numberOfStars)}
-								</div>
-							</div>
-						))}
-					</div>
-					<div className='col-span-1 mx-6 mt-6 sm:col-span-2 sm:mx-0 sm:mt-0'>
-						<h2 className='mb-4 text-xl font-bold lg:text-2xl'>My timeline</h2>
-						<div className='timeline-container relative flex w-full flex-col after:absolute after:h-full after:w-1 after:bg-lime-700 dark:after:bg-dark'>
-							<TimelineItem index={0} url='https://www.google.ca'>
-								<time className='text-grey text-xs'>October 2018 - now</time>
-								<p>
-									Frontend Developer at{' '}
-									<a
-										target='_blank'
-										rel='noopener noreferrer'
-										className='shadow-link hover:shadow-link-hover dark:shadow-link-dark dark:hover:shadow-link-dark-hover cursor-pointer transition-shadow'
-										href='https://www.google.ca'
-									>
-										Google
-									</a>
-									, Vancouver
-								</p>
-							</TimelineItem>
-							<TimelineItem index={1} url='https://www.amazon.ca/'>
-								<time className='text-grey text-xs'>
-									September 2017 - October 2018
-								</time>
-								<p>
-									Full Stack Developer at{' '}
-									<a
-										target='_blank'
-										rel='noopener noreferrer'
-										className='shadow-link hover:shadow-link-hover dark:shadow-link-dark dark:hover:shadow-link-dark-hover cursor-pointer transition-shadow'
-										href='https://www.amazon.ca/'
-									>
-										Amazon
-									</a>
-									, Vancouver
-								</p>
-							</TimelineItem>
-							<TimelineItem index={2} url='https://www.microsoft.com/en-ca'>
-								<time className='text-grey text-xs'>
-									February 2017 - June 2017
-								</time>
-								<p>
-									Internship as Swift Developer at{' '}
-									<a
-										target='_blank'
-										rel='noopener noreferrer'
-										className='shadow-link hover:shadow-link-hover dark:shadow-link-dark dark:hover:shadow-link-dark-hover cursor-pointer transition-shadow'
-										href='https://www.microsoft.com/en-ca'
-									>
-										Microsoft
-									</a>
-									, Vancouver
-								</p>
-							</TimelineItem>
-							<TimelineItem index={3} url='https://UBC.ca'>
-								<time className='text-grey text-xs'>
-									September 2014 - June 2017
-								</time>
-								<p>
-									Bachelor Applied Computer Sciences at{' '}
-									<a
-										target='_blank'
-										rel='noopener noreferrer'
-										className='shadow-link hover:shadow-link-hover dark:shadow-link-dark dark:hover:shadow-link-dark-hover cursor-pointer transition-shadow'
-										href='https://UBC.ca'
-									>
-										UBC
-									</a>
-								</p>
-							</TimelineItem>
-							<TimelineItem index={4} url='https://EA.ca'>
-								<time className='text-grey text-xs'>
-									May 2012 - August 2014
-								</time>
-								<p>
-									Support Engineer at{' '}
-									<a
-										target='_blank'
-										rel='noopener noreferrer'
-										className='shadow-link hover:shadow-link-hover dark:shadow-link-dark dark:hover:shadow-link-dark-hover cursor-pointer transition-shadow'
-										href='https://EA.ca'
-									>
-										EA
-									</a>
-									, Vancouver
-								</p>
-							</TimelineItem>
-						</div>
-					</div>
-				</div>
-			</section>
+			<article className='dark:prose-dark prose prose-green'>
+				<MDXRemote {...source} components={components} />
+			</article>
 		</>
 	)
 }
 
-export default CV
+export default CV // export Main function
+
+// #### get-Static-Props
+
+// export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
+export const getStaticProps: GetStaticProps = async () => {
+	const { content, data } = getPost('gemcv')
+	const mdxSource = await serialize(content, { scope: data })
+
+	return {
+		props: {
+			source: mdxSource,
+			frontMatter: data,
+		},
+	}
+}
+
+// #### get-Static-Paths
+// export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+// 	const posts = getAllPosts(['slug'])
+
+// 	const paths = locales!.flatMap(locale =>
+// 		posts.map(post => ({
+// 			params: {
+// 				slug: post.slug,
+// 			},
+// 			locale,
+// 		}))
+// 	)
+
+// 	return {
+// 		paths,
+// 		fallback: false,
+// 	}
+// }

@@ -51,5 +51,3 @@ timelines:[
 ---
 
 A bit about me
-
-<UnicodeStarRating />

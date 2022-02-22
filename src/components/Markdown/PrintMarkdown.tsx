@@ -8,7 +8,7 @@ interface IProps {
 
 export default function PrintMarkdown({ markdownString }: IProps) {
 	return (
-		<div className={markdownStyles.markdown}>
+		<div className={`prose ${markdownStyles.markdown}`}>
 			<MarkdownToHtml content={markdownString}></MarkdownToHtml>
 		</div>
 	)
