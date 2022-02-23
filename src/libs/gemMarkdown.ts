@@ -42,7 +42,7 @@ export function getBySlug(dir: string, slug: string, fields: string[] = []) {
 	const fullPath = join(dir, `${realSlug}.md`)
 	const fileContents = fs.readFileSync(fullPath, 'utf8')
 	// MD format
-	// data === gemindex | title | image | navigation | Footer
+	// data is frontmatter === gemindex | title | image | navigation | Footer
 	// content === Md file content
 	const { data, content } = matter(fileContents)
 	const items: any = {}

@@ -9,6 +9,8 @@ import { getPost } from '@/utils/GemMdxUtils'
 import { ICV } from '@/types/ICV'
 import Technologies from '@/components/StarRatings/Technologies'
 import CVTimelines from '@/components/Timelines/CVTimelines'
+// import SiteLayout from '@/components/Layouts/SiteLayout'
+import BlogLayout from '@/components/Layouts/BlogLayout'
 
 // #### 1. components on MDX files
 // V4.0 use ==> React.ComponentProps < typeof mdx.MDXProvider > ['components']
@@ -51,11 +53,11 @@ const CV: React.FC<Props> = ({ source, frontMatter }: Props) => {
 	])
 
 	return (
-		<>
+		<BlogLayout>
 			<article className='dark:prose-dark prose prose-green'>
 				<MDXRemote {...source} components={components} />
 			</article>
-		</>
+		</BlogLayout>
 	)
 }
 

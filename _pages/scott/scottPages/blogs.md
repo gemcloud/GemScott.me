@@ -4,6 +4,7 @@ title: Blog
 image: tigers/tiger-graduates-blue.webp
 navigation: true
 footer: false
+redirect: /blog
 ---
 
 ### Blog Landing Page
