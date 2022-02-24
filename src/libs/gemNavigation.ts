@@ -16,6 +16,7 @@ export function getNavigationLinks() {
 	const fields = [
 		'gemindex',
 		'title',
+		'template',
 		'slug',
 		'navigation',
 		'footer',
@@ -27,9 +28,18 @@ export function getNavigationLinks() {
 
 	// const links = [{ ...home, slug: '' }, ...dynamicPages].map(
 	const links = [...dynamicPages].map(
-		({ gemindex, title, slug, navigation, footer, redirect }: any) => ({
+		({
 			gemindex,
 			title,
+			template,
+			slug,
+			navigation,
+			footer,
+			redirect,
+		}: any) => ({
+			gemindex,
+			title,
+			template,
 			href: redirect ? redirect : slug, // if there is a redirect, use redirect url (bloglanding & cv page)
 			navigation: navigation || false,
 			footer: footer || false,

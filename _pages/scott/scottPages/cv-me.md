@@ -1,10 +1,11 @@
 ---
 gemindex: A500
 title: CV
+template: MarkdownOnly
 image: tigers/tiger-graduates-blue.webp
 navigation: true
 footer: false
-redirect: /cv
+redirect: cv
 ---
 
 ### A bit about me

@@ -8,6 +8,7 @@ export interface PageAttributes {
 	// maybe need toString etc...
 	gemindex: string // format A9999 S9999
 	title: string
+	template: string
 	slug: string
 	image: string
 	markdown: string
@@ -16,6 +17,7 @@ export interface PageAttributes {
 export interface LinksAttributes {
 	gemindex: string
 	title: string
+	template: string
 	href: string
 	navigation: boolean
 	footer: string

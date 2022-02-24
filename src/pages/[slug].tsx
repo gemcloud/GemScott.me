@@ -13,11 +13,12 @@ type Props = {
 }
 
 export default function DynamicPage({ page, links }: Props) {
-	const { gemindex, title, image, slug, markdown } = page
+	const { gemindex, title, template, image, slug, markdown } = page
 	return (
 		<DynamicLayout
 			gemindex={gemindex}
 			title={title}
+			template={template}
 			image={image}
 			slug={slug}
 			markdown={markdown}
@@ -32,6 +33,7 @@ export async function getStaticProps({ params }: any) {
 	const page = getDynamicPageContentBySlug(slug, [
 		'gemindex',
 		'title',
+		'template',
 		'image',
 		'slug',
 		'content',

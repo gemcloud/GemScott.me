@@ -1,6 +1,7 @@
 ---
 gemindex: A400
 title: Contact
+template: MarkdownOnly
 image: tigers/tiger-chef.jpg
 navigation: true
 footer: false

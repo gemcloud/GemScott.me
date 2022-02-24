@@ -1,5 +1,6 @@
 ---
 gemindex: A100
+template: LeftImgRight
 title: Personal
 image: tigers/tiger-businessman.jpg
 navigation: true

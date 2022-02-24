@@ -19,10 +19,14 @@ type Props = {
 
 // export default function IndexPage({ page }: Props, links: Props) {
 function IndexPage({ page, links }: Props) {
+	console.log(
+		'page.title =' + page.title + ' ==page.template =' + page.template
+	)
 	return (
 		<DynamicLayout
 			gemindex={page.gemindex}
 			title={page.title}
+			template={page.template}
 			image={page.image}
 			slug={page.slug}
 			markdown={page.markdown}
@@ -41,6 +45,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		// const page = getPageContentBySlug('scottHome', [
 		'gemindex',
 		'title',
+		'template',
 		'image',
 		'slug',
 		'content',
