@@ -4,15 +4,17 @@ import DynamicLayout from '@/components/Layouts/DynamicLayout'
 import {
 	getDynamicPageContentBySlug,
 	getAllDynamicPages,
+	getAllBlogPosts,
 } from '@/libs/gemMarkdown'
 import { getNavigationLinks } from '@/libs/gemNavigation'
 
 type Props = {
 	page: PageAttributes
 	links: LinksAttributes[]
+	blogPosts: any
 }
 
-export default function DynamicPage({ page, links }: Props) {
+export default function DynamicPage({ page, links, blogPosts }: Props) {
 	const { gemindex, title, template, image, slug, markdown } = page
 	return (
 		<DynamicLayout
@@ -22,6 +24,7 @@ export default function DynamicPage({ page, links }: Props) {
 			image={image}
 			slug={slug}
 			markdown={markdown}
+			posts={blogPosts}
 			links={links}
 		/>
 	)
@@ -29,6 +32,7 @@ export default function DynamicPage({ page, links }: Props) {
 
 export async function getStaticProps({ params }: any) {
 	const links = getNavigationLinks()
+	const blogPosts = getAllBlogPosts()
 	const { slug } = params
 	const page = getDynamicPageContentBySlug(slug, [
 		'gemindex',
@@ -46,6 +50,7 @@ export async function getStaticProps({ params }: any) {
 				markdown: page.content,
 			},
 			links,
+			blogPosts,
 		},
 	}
 }

@@ -1,16 +1,12 @@
 import React from 'react'
-// import fs from 'fs'
-// import { join } from 'path'
-// import matter from 'gray-matter'
-// import Image from 'next/image'
-// import Link from 'next/link'
+import Image from 'next/image'
+import Link from 'next/link'
 
-// export default function BlogLanding({ posts }: any) {
-export default function BlogLanding() {
+export default function BlogLanding({ posts }: any) {
 	return (
 		<>
 			<div>blog</div>
-			{/* <div className='grid grid-cols-1 p-4 md:grid-cols-3 md:p-0 lg:grid-cols-4'>
+			<div className='grid grid-cols-1 p-4 md:grid-cols-3 md:p-0 lg:grid-cols-4'>
 				{posts.map(({ slug, frontmatter }: any) => (
 					<div
 						key={slug}
@@ -29,12 +25,37 @@ export default function BlogLanding() {
 						</Link>
 					</div>
 				))}
-			</div> */}
+			</div>
 		</>
 	)
 }
 
+// getInitialProps or getServerSideProps or GetStaticPaths or getStaticProps
+
 // export async function getStaticProps() {
+// 	const posts = getAllBlogPosts()
+// 	return {
+// 		props: {
+// 			posts,
+// 		},
+// 	}
+// }
+
+// export async function getStaticPaths() {
+// 	const posts = getAllBlogPosts()
+// 	const paths = posts.map(({ slug }) => ({
+// 		params: {
+// 			slug,
+// 		},
+// 	}))
+// 	return {
+// 		paths,
+// 		fallback: false,
+// 	}
+// }
+
+// export const getStaticProps: GetStaticProps = async => {
+// 	console.log('hello blog landing... ')
 // 	const pagesDirectory = join(process.cwd(), '_pages')
 // 	const postBlogsDirectory = join(pagesDirectory, 'postblogs')
 
@@ -51,7 +72,7 @@ export default function BlogLanding() {
 // 			frontmatter,
 // 		}
 // 	})
-
+// 	console.log('posts = ' + posts)
 // 	return {
 // 		props: {
 // 			posts,

@@ -1,0 +1,49 @@
+// import fs from 'fs'
+// import path from 'path'
+// import { join } from 'path'
+// import matter from 'gray-matter'
+
+// export function getAllBlogPosts() {
+// 	console.log('getAllBlogPosts')
+// 	const pagesDirectory = join(process.cwd(), '_pages')
+// 	const postBlogsDirectory = join(pagesDirectory, 'postblogs')
+
+// 	const files = fs.readdirSync(postBlogsDirectory)
+
+// 	return files.map(fileName => {
+// 		const slug = fileName.replace('.md', '')
+// 		const fullPath = join(postBlogsDirectory, `${fileName}`)
+// 		const readFile = fs.readFileSync(fullPath, 'utf8')
+
+// 		const { data: frontmatter } = matter(readFile)
+// 		return {
+// 			slug,
+// 			frontmatter,
+// 		}
+// 	})
+// }
+
+// export function getAllBlogPostsSecond() {
+// 	const postsDirectory = path.join(process.cwd(), '_posts')
+// 	const filenames = fs.readdirSync(postsDirectory)
+
+// 	return filenames.map(filename => {
+// 		const file = fs.readFileSync(
+// 			path.join(process.cwd(), '_posts', filename),
+// 			'utf8'
+// 		)
+
+// 		// get frontmatter
+// 		const { data } = matter(file)
+
+// 		// get slug from filename
+// 		const slug = filename.replace(/\.md$/, '')
+
+// 		// return combined frontmatter and slug; build permalink
+// 		return {
+// 			...data,
+// 			permalink: `/posts/${slug}`,
+// 			slug,
+// 		}
+// 	})
+// }

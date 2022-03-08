@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-	i18n: {
-		locales: ['en', 'ja'],
-		defaultLocale: 'en',
-		localeDetection: false,
-	},
+	// i18n: {
+	// 	locales: ['en', 'ja'],
+	// 	defaultLocale: 'en',
+	// 	localeDetection: false,
+	// },
 	reactStrictMode: true,
 	trailingSlash: true,
 	images: {
@@ -15,11 +15,29 @@ module.exports = {
 		// loader: 'cloudinary',
 		// path: 'https://your-site.com/assets/images/',
 	},
-	webpack: config => {
+	// webpack: config => {
+	// 	config.module.rules.push({
+	// 		test: /\.md$/,
+	// 		loader: 'frontmatter-markdown-loader',
+	// 	})
+	// 	return config
+	// },
+	webpack5: true,
+	webpack: (config, { isServer }) => {
 		config.module.rules.push({
 			test: /\.md$/,
 			loader: 'frontmatter-markdown-loader',
 		})
+		// config.resolve.fallback = { fs: false }
+		// Fixes npm packages that depend on `fs` module
+		// if (!isServer) {
+		// 	config.resolve.fallback = {
+		// 		fs: false,
+		// 		path: false,
+		// 		os: false,
+		// 	}
+		// }
+
 		return config
 	},
 }

@@ -15,6 +15,9 @@ const pagesDirectory = join(process.cwd(), '_pages/scott')
 // const dynamicPagesDirectory = join(pagesDirectory, 'resume')
 const dynamicPagesDirectory = join(pagesDirectory, 'scottPages')
 
+const pagesBlogDirectory = join(process.cwd(), '_pages')
+const postBlogsDirectory = join(pagesBlogDirectory, 'postblogs')
+
 /**
  * Gets all the files (slugs) in a directory
  * @param {fs.PathLike} dir :  the directory full path.
@@ -90,4 +93,24 @@ export function getAllDynamicPages(fields: string[] = []) {
 	const slugs = getSlugsFromDirectory(dynamicPagesDirectory)
 	const pages = slugs.map(slug => getDynamicPageContentBySlug(slug, fields))
 	return pages
+}
+
+export function getAllBlogPosts() {
+	console.log('getAllBlogPosts')
+	// const pagesDirectory = join(process.cwd(), '_pages')
+	// const postBlogsDirectory = join(pagesDirectory, 'postblogs')
+
+	const files = fs.readdirSync(postBlogsDirectory)
+
+	return files.map(fileName => {
+		const slug = fileName.replace('.md', '')
+		const fullPath = join(postBlogsDirectory, `${fileName}`)
+		const readFile = fs.readFileSync(fullPath, 'utf8')
+
+		const { data: frontmatter } = matter(readFile)
+		return {
+			slug,
+			frontmatter,
+		}
+	})
 }

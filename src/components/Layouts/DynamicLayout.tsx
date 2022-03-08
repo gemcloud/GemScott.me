@@ -9,6 +9,7 @@ import LeftImgRight from '../GemTemplates/LeftImgRight'
 import LeftRightImg from '../GemTemplates/LeftRightImg'
 import ProjectLanding from '../GemTemplates/ProjectLanding'
 import BlogLanding from '../GemTemplates/BlogLanding'
+// import { getAllBlogPosts } from '@/libs/gemMarkdown'
 
 type Props = {
 	children?: ReactNode
@@ -18,6 +19,7 @@ type Props = {
 	title: string
 	image: string
 	markdown: string
+	posts?: any
 	links: LinksAttributes[]
 }
 
@@ -28,6 +30,7 @@ export default function DynamicLayout({
 	template,
 	image,
 	markdown,
+	posts,
 	links,
 }: Props) {
 	// const canonicalUrl = process.env.CANONICAL_URL!
@@ -62,7 +65,7 @@ export default function DynamicLayout({
 						WithImage: <WithImage markdown={markdown} image={image} />,
 						MarkdownOnly: <PrintMarkdown markdownString={markdown} />,
 						ProjectLanding: <ProjectLanding markdown={markdown} />,
-						BlogLanding: <BlogLanding />,
+						BlogLanding: <BlogLanding posts={posts} />,
 						undefined: <PrintMarkdown markdownString={markdown} />,
 					}[template]
 				}
@@ -76,3 +79,12 @@ export default function DynamicLayout({
 		</>
 	)
 }
+
+// export async function getStaticProps() {
+// 	const posts = getAllBlogPosts()
+// 	return {
+// 		props: {
+// 			posts,
+// 		},
+// 	}
+// }

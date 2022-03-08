@@ -23,7 +23,7 @@ export async function getStaticProps() {
 			frontmatter,
 		}
 	})
-
+	// console.log('posts = ' + posts)
 	return {
 		props: {
 			posts,
