@@ -30,52 +30,16 @@ export default function BlogLanding({ posts }: any) {
 	)
 }
 
-// getInitialProps or getServerSideProps or GetStaticPaths or getStaticProps
-
-// export async function getStaticProps() {
+// component level can NOT use "getStaticProps" + "getStaticPaths"!!! only use "getServerSideProps"
+// getInitialProps or getServerSideProps or getStaticPaths or getStaticProps
+// export async function getServerSideProps() {
 // 	const posts = getAllBlogPosts()
 // 	return {
 // 		props: {
 // 			posts,
 // 		},
 // 	}
-// }
-
-// export async function getStaticPaths() {
-// 	const posts = getAllBlogPosts()
-// 	const paths = posts.map(({ slug }) => ({
-// 		params: {
-// 			slug,
-// 		},
-// 	}))
-// 	return {
-// 		paths,
-// 		fallback: false,
-// 	}
-// }
-
-// export const getStaticProps: GetStaticProps = async => {
-// 	console.log('hello blog landing... ')
-// 	const pagesDirectory = join(process.cwd(), '_pages')
-// 	const postBlogsDirectory = join(pagesDirectory, 'postblogs')
-
-// 	const files = fs.readdirSync(postBlogsDirectory)
-
-// 	const posts = files.map(fileName => {
-// 		const slug = fileName.replace('.md', '')
-// 		const fullPath = join(postBlogsDirectory, `${fileName}`)
-// 		const readFile = fs.readFileSync(fullPath, 'utf8')
-
-// 		const { data: frontmatter } = matter(readFile)
-// 		return {
-// 			slug,
-// 			frontmatter,
-// 		}
-// 	})
-// 	console.log('posts = ' + posts)
-// 	return {
-// 		props: {
-// 			posts,
-// 		},
-// 	}
+// 	// return {
+// 	// 	props: {}, // will be passed to the page component as props
+// 	// }
 // }

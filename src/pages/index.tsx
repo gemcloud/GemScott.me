@@ -19,9 +19,7 @@ type Props = {
 
 // export default function IndexPage({ page }: Props, links: Props) {
 function IndexPage({ page, links }: Props) {
-	console.log(
-		'page.title =' + page.title + ' ==page.template =' + page.template
-	)
+	console.log(' index page!')
 	return (
 		<DynamicLayout
 			gemindex={page.gemindex}

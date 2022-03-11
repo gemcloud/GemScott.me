@@ -5,6 +5,7 @@ import {
 	getDynamicPageContentBySlug,
 	getAllDynamicPages,
 	getAllBlogPosts,
+	getAllProjects,
 } from '@/libs/gemMarkdown'
 import { getNavigationLinks } from '@/libs/gemNavigation'
 
@@ -12,9 +13,15 @@ type Props = {
 	page: PageAttributes
 	links: LinksAttributes[]
 	blogPosts: any
+	allProjects: any
 }
 
-export default function DynamicPage({ page, links, blogPosts }: Props) {
+export default function DynamicPage({
+	page,
+	links,
+	blogPosts,
+	allProjects,
+}: Props) {
 	const { gemindex, title, template, image, slug, markdown } = page
 	return (
 		<DynamicLayout
@@ -25,6 +32,7 @@ export default function DynamicPage({ page, links, blogPosts }: Props) {
 			slug={slug}
 			markdown={markdown}
 			posts={blogPosts}
+			myProjects={allProjects}
 			links={links}
 		/>
 	)
@@ -33,6 +41,8 @@ export default function DynamicPage({ page, links, blogPosts }: Props) {
 export async function getStaticProps({ params }: any) {
 	const links = getNavigationLinks()
 	const blogPosts = getAllBlogPosts()
+	const allProjects = getAllProjects()
+
 	const { slug } = params
 	const page = getDynamicPageContentBySlug(slug, [
 		'gemindex',
@@ -51,6 +61,7 @@ export async function getStaticProps({ params }: any) {
 			},
 			links,
 			blogPosts,
+			allProjects,
 		},
 	}
 }

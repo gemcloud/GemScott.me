@@ -11,7 +11,7 @@ const useCryptoData = () => {
 		)
 			.then(res => res.json())
 			.then(data => {
-				console.log(data)
+				console.log('useCryptoData-useEffect-CSR-ClientSideRendering')
 				const preparedData = []
 				data.Data.forEach(d => {
 					const { Id, Name, FullName, ImageUrl, Url } = d.CoinInfo

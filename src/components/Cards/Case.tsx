@@ -19,6 +19,11 @@ export default function Case({
 	tags,
 	children,
 }: CaseProps) {
+	// We do not need "require" to loading image.
+	// We only need put images file on the public folder, and set correct path
+	// e.g. /logos/toshiba-leading-innovation.svg
+	// NG ==> const imgSrc = require(`../../../public/images/${img}`)
+
 	return (
 		<div className='hover:shadow-lg transition-duration-300 rounded-xl border-4 border-purple-500 p-6 transition-shadow ease-in-out'>
 			<div className='portfolio-case h-full'>

@@ -20,6 +20,7 @@ type Props = {
 	image: string
 	markdown: string
 	posts?: any
+	myProjects?: any
 	links: LinksAttributes[]
 }
 
@@ -31,6 +32,7 @@ export default function DynamicLayout({
 	image,
 	markdown,
 	posts,
+	myProjects,
 	links,
 }: Props) {
 	// const canonicalUrl = process.env.CANONICAL_URL!
@@ -64,7 +66,7 @@ export default function DynamicLayout({
 						),
 						WithImage: <WithImage markdown={markdown} image={image} />,
 						MarkdownOnly: <PrintMarkdown markdownString={markdown} />,
-						ProjectLanding: <ProjectLanding markdown={markdown} />,
+						ProjectLanding: <ProjectLanding projects={myProjects} />,
 						BlogLanding: <BlogLanding posts={posts} />,
 						undefined: <PrintMarkdown markdownString={markdown} />,
 					}[template]

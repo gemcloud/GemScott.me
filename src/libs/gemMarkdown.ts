@@ -11,8 +11,6 @@ import matter from 'gray-matter'
 // import { toUnicode } from 'punycode'
 
 const pagesDirectory = join(process.cwd(), '_pages/scott')
-// const dynamicPagesDirectory = join(pagesDirectory, 'dynamic')
-// const dynamicPagesDirectory = join(pagesDirectory, 'resume')
 const dynamicPagesDirectory = join(pagesDirectory, 'scottPages')
 
 const pagesBlogDirectory = join(process.cwd(), '_pages')
@@ -90,6 +88,7 @@ export function getDynamicPageContentBySlug(
  * @return {string[]} : a list of all the pages in the _pages/dynamic directory
  */
 export function getAllDynamicPages(fields: string[] = []) {
+	console.log('getAllDynamicPages')
 	const slugs = getSlugsFromDirectory(dynamicPagesDirectory)
 	const pages = slugs.map(slug => getDynamicPageContentBySlug(slug, fields))
 	return pages
@@ -97,9 +96,7 @@ export function getAllDynamicPages(fields: string[] = []) {
 
 export function getAllBlogPosts() {
 	console.log('getAllBlogPosts')
-	// const pagesDirectory = join(process.cwd(), '_pages')
 	// const postBlogsDirectory = join(pagesDirectory, 'postblogs')
-
 	const files = fs.readdirSync(postBlogsDirectory)
 
 	return files.map(fileName => {
@@ -111,6 +108,28 @@ export function getAllBlogPosts() {
 		return {
 			slug,
 			frontmatter,
+		}
+	})
+}
+
+export function getAllProjects(fields: string[] = []) {
+	const projectsDirectory = join(pagesDirectory, 'scottProjects')
+	// read all of files
+	const projectfiles = fs.readdirSync(projectsDirectory)
+
+	// const projects = projectfiles.map(slug => getProjectContent(slug, fields))
+	// return projects
+	return projectfiles.map(fileName => {
+		const slug = fileName.replace('.md', '')
+		const fullPath = join(projectsDirectory, `${fileName}`)
+		const readFile = fs.readFileSync(fullPath, 'utf8')
+
+		// const { data: frontmatter } = matter(readFile)
+		const { data: frontmatter, content } = matter(readFile)
+		return {
+			slug,
+			frontmatter,
+			content,
 		}
 	})
 }
