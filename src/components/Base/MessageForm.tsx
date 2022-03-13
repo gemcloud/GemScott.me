@@ -55,7 +55,7 @@ export default function MessageForm() {
 				// process.env.EMAIL_JS_TEMPLATE || '',
 				// params,
 				// process.env.EMAIL_JS_USER || ''
-				'service_diqt22j',
+				'service_s8b4bcz',
 				// parseInt(<string>process.env.PORT, 10) || 3000
 				'template_qbou7rc',
 				params,
@@ -66,13 +66,13 @@ export default function MessageForm() {
 					if (status === 200) {
 						setFormSubmitted({
 							title: 'Message has been sent',
-							paragraph: 'Mike will be in contact with you soon.',
+							paragraph: 'Scott will be in contact with you soon.',
 						})
 					} else {
 						setFormSubmitted({
 							title:
 								'Unexpected status code returned from EmailJS, try again later',
-							paragraph: 'Please contact Mike either by phone or email.',
+							paragraph: 'Please contact me either by phone or email.',
 						})
 					}
 				},
@@ -81,7 +81,7 @@ export default function MessageForm() {
 					console.log(err)
 					setFormSubmitted({
 						title: 'Error sending message, try again later',
-						paragraph: 'Please contact Mike either by phone or email.',
+						paragraph: 'Please contact me either by phone or email.',
 					})
 				}
 			)
@@ -89,12 +89,66 @@ export default function MessageForm() {
 
 	return formSubmitted.title === '' ? (
 		<div>
-			<h3 className='text-lato text-2xl font-light text-white'>
-				Send me a message
-			</h3>
+			<h2 className='mb-6 text-2xl font-bold'>Drop me a message</h2>
 			{!showCaptcha ? (
 				<form onSubmit={submitFormAndShowCaptcha}>
-					<div className='font-open-sans flex flex-col justify-start sm:flex-row'>
+					<div className='mb-4 flex flex-col'>
+						<label className='mb-3' htmlFor='email'>
+							Your Name
+						</label>
+						<input
+							id='contact-form-name'
+							className='rounded-md border-2 border-indigo-600 bg-white py-2 px-4'
+							type='text'
+							value={name}
+							placeholder='Your Name'
+							onChange={e => dispatch({ type: 'name', value: e.target.value })}
+							required
+						/>
+					</div>
+					<div className='mb-4 flex flex-col'>
+						<label className='mb-3' htmlFor='email'>
+							Your e-mail
+						</label>
+						<input
+							id='contact-form-email'
+							className='rounded-md border-2 border-indigo-600 bg-white py-2 px-4'
+							type='email'
+							value={email}
+							placeholder='info@example.com'
+							onChange={e => dispatch({ type: 'email', value: e.target.value })}
+							required
+						/>
+					</div>
+					<div className='flex flex-col'>
+						<label className='my-2' htmlFor='message'>
+							Your message
+						</label>
+						<textarea
+							rows={5}
+							id='contact-form-message'
+							className='rounded-md border-2 border-indigo-600 bg-white py-2 px-4'
+							value={message}
+							onChange={e =>
+								dispatch({ type: 'message', value: e.target.value })
+							}
+							placeholder='Hey, I would like to get in touch with you'
+							required
+						/>
+					</div>
+					{showFormErr ? (
+						<p className='text-red-400 sm:mr-4'>
+							Please fill in all three input boxes to send a message
+						</p>
+					) : null}
+					<button
+						className='mt-4 rounded-md bg-indigo-600 px-8 py-4 text-white'
+						type='submit'
+					>
+						Submit
+					</button>
+
+					{/* <div className='font-open-sans flex flex-col justify-start sm:flex-row'>
 						<div className='w-100 flex flex-col items-end sm:mr-4 sm:w-1/2 md:w-2/5'>
 							<label
 								className='my-2 block w-full font-bold text-gray-500'
@@ -156,12 +210,12 @@ export default function MessageForm() {
 							</p>
 						) : null}
 						<button
-							className='bg-theme-green focus:shadow-outline mt-6 w-full rounded py-2 px-4 text-white focus:outline-none sm:mr-4 md:w-1/4 lg:w-1/5'
+							className='mt-4 rounded-md bg-indigo-600 px-8 py-4 text-white'
 							type='submit'
 						>
 							Send
 						</button>
-					</div>
+					</div> */}
 				</form>
 			) : (
 				<ReCAPTCHA
@@ -172,11 +226,13 @@ export default function MessageForm() {
 			)}
 		</div>
 	) : (
-		<div className='flex flex-col items-center'>
-			<h3 className='text-lato text-2xl font-light text-white'>
+		<div className='flex flex-col items-center '>
+			<h1 className='text-lato text-2xl font-bold text-green-600'>
 				{formSubmitted.title}
-			</h3>
-			<p>{formSubmitted.paragraph}</p>
+			</h1>
+			<p className='text-lato text-2xl font-bold text-green-600'>
+				{formSubmitted.paragraph}
+			</p>
 		</div>
 	)
 }

@@ -9,6 +9,7 @@ import LeftImgRight from '../GemTemplates/LeftImgRight'
 import LeftRightImg from '../GemTemplates/LeftRightImg'
 import ProjectLanding from '../GemTemplates/ProjectLanding'
 import BlogLanding from '../GemTemplates/BlogLanding'
+import TemplateContact from '../GemTemplates/TemplateContact'
 // import { getAllBlogPosts } from '@/libs/gemMarkdown'
 
 type Props = {
@@ -66,6 +67,7 @@ export default function DynamicLayout({
 						),
 						WithImage: <WithImage markdown={markdown} image={image} />,
 						MarkdownOnly: <PrintMarkdown markdownString={markdown} />,
+						TemplateContact: <TemplateContact markdownString={markdown} />,
 						ProjectLanding: <ProjectLanding projects={myProjects} />,
 						BlogLanding: <BlogLanding posts={posts} />,
 						undefined: <PrintMarkdown markdownString={markdown} />,

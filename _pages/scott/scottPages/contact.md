@@ -1,19 +1,18 @@
 ---
 gemindex: A400
 title: Contact
-template: MarkdownOnly
+template: TemplateContact
 image: tigers/tiger-chef.jpg
 navigation: true
 footer: false
-redirect: #/ContactForm
 ---
 
-### Contact
+## Contact Me
 
-Drop me a message
+Testing My Phone: [604-358-7529](tel:+6043587529)
 
-Your e-mail
+Phone: [Shaw Customer service](tel:+18884722222)
 
-Your message
+Email: <gemcloud85@gmail.com>
 
-Submit
+Address: 453 W 12th Ave, Vancouver, BC Canada V5Y 1V4

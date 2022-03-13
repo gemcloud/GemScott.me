@@ -88,14 +88,14 @@ export function getDynamicPageContentBySlug(
  * @return {string[]} : a list of all the pages in the _pages/dynamic directory
  */
 export function getAllDynamicPages(fields: string[] = []) {
-	console.log('getAllDynamicPages')
+	// console.log('getAllDynamicPages')
 	const slugs = getSlugsFromDirectory(dynamicPagesDirectory)
 	const pages = slugs.map(slug => getDynamicPageContentBySlug(slug, fields))
 	return pages
 }
 
 export function getAllBlogPosts() {
-	console.log('getAllBlogPosts')
+	// console.log('getAllBlogPosts')
 	// const postBlogsDirectory = join(pagesDirectory, 'postblogs')
 	const files = fs.readdirSync(postBlogsDirectory)
 
