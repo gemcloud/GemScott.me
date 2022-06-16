@@ -1,3 +1,9 @@
+## 2022-03-13
+
+Production issue : recaptcha
+ERROR for site owner:
+Invalid domain for site key
+
 ## 2022-01-21
 
 ### Helper:

@@ -6,6 +6,7 @@ import { LinksAttributes } from '@/types/IPageMdStructure'
 // import SocialBar from './socialBar'
 // import Contact from './contact'
 import { FooterGem } from '@/components/Footers/FooterGem'
+import MobileBottomNav from '@/components/Layouts/MobileBottomNav'
 
 type Props = {
 	children?: ReactNode
@@ -26,9 +27,10 @@ export default function SiteLayout({ children, pageTitle, links }: Props) {
 			</Container>
 			<div className='flex flex-1 flex-col justify-end'>
 				{/* <Contact />
-				<Footer links={links} /> */}
+				<Footer links={links} />  FooterComponent*/}
 				<FooterGem />
 			</div>
+			<MobileBottomNav />
 		</div>
 	)
 }

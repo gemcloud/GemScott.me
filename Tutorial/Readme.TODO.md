@@ -1,3 +1,7 @@
+## setting up a professional React application:
+
+https://dev.to/profydev/how-to-set-up-a-professional-react-project-including-screencast-180f
+
 #### UI + theme
 
 samples:
@@ -17,7 +21,7 @@ Fixed TS Issuse:
 2. /libs/_.js ===Change to ==>_.ts
 3. pages/[slug].js == change to ===>[slug].tsx
 
-## 20220208 : clone Thomas style
+## 20220208 : clone Thomas style https://github.com/thomasledoux1/website-thomas
 
 processing 1. add CV.tsx page 2. name anmimation 3. hero section
 

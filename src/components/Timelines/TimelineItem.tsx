@@ -16,7 +16,7 @@ export default function TimelineItem(param: Props) {
                         even:self-end even:pl-6 even:after:right-auto even:after:left-4'
 			data-aos={`fade-${param.index % 2 === 0 ? 'left' : 'right'}`}
 		>
-			<div className='shadow relative rounded border-2 border-solid border-lime-600 p-4 dark:text-lime-700 sm:max-w-[80%]'>
+			<div className='relative rounded border-2 border-solid border-lime-600 p-4 shadow dark:text-lime-700 sm:max-w-[80%]'>
 				{param.children}
 				<span
 					className={`border-primary top-timelineCircle absolute h-4 w-4 rounded-full border-4 border-solid bg-purple-700 ${

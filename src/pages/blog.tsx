@@ -38,7 +38,7 @@ export default function Blog({ posts }: any) {
 				{posts.map(({ slug, frontmatter }: any) => (
 					<div
 						key={slug}
-						className='shadow-lg flex flex-col overflow-hidden rounded-xl border border-gray-200 marker:m-2'
+						className='flex flex-col overflow-hidden rounded-xl border border-gray-200 shadow-lg marker:m-2'
 					>
 						<Link href={`/post/${slug}`}>
 							<a>

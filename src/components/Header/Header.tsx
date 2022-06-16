@@ -20,7 +20,7 @@ export default function Header({ links }: Props) {
 	)
 	return (
 		<header>
-			<div className='shadow-lg sticky top-0 z-20 bg-white py-2 dark:bg-black md:mb-6 md:py-6'>
+			<div className='sticky top-0 z-20 bg-white py-2 shadow-lg dark:bg-black md:mb-6 md:py-6'>
 				<div className='container mx-auto flex items-center justify-between px-4 lg:max-w-4xl'>
 					{/* logo + Name */}
 					<div>

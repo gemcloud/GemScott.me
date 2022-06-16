@@ -10,6 +10,7 @@ https://daily-dev-tips.com/posts/setting-up-nextjs-with-tailwind-css/
 #### 1. The first step we have to do is, install the dependencies that are required for Tailwind.
 
 ```command
+> npm install -D tailwindcss postcss autoprefixer
 >npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
 or
 >npm install tailwindcss@latest --save-dev postcss@latest --save-dev autoprefixer@latest --save-dev
@@ -54,6 +55,7 @@ And "import src/styles/globals.css" on \_app.tsx file.
 
 ```
 >npm install -D @tailwindcss/typography
+>npm install -D @tailwindcss/forms
 ```
 
 #### 2. Open the tailwind.config.js file and add it under the plugins section.

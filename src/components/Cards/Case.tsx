@@ -25,7 +25,7 @@ export default function Case({
 	// NG ==> const imgSrc = require(`../../../public/images/${img}`)
 
 	return (
-		<div className='hover:shadow-lg transition-duration-300 rounded-xl border-4 border-purple-500 p-6 transition-shadow ease-in-out'>
+		<div className='transition-duration-300 rounded-xl border-4 border-purple-500 p-6 transition-shadow ease-in-out hover:shadow-lg'>
 			<div className='portfolio-case h-full'>
 				<a
 					target='_blank'
